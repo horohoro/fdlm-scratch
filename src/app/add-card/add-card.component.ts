@@ -28,8 +28,6 @@ export class AddCardComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.addCardForm);
-
     let card = new Card();
     card.inputLang = this.addCardForm.value.inputLang;
     if (this.addCardForm.value.person) {

@@ -136,7 +136,7 @@ export class BackendService {
       errorMessage = error.error.message;
     } else {
       // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.error}`;
     }
     console.log(errorMessage);
     return throwError(errorMessage);

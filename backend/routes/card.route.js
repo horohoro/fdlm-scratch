@@ -178,7 +178,7 @@ cardRoute.route('/AssignUnassignedCard').get((req, res, next) => {
   console.log(req.originalUrl)
 
   if (!req.query.player) {
-    throw new Error('Player id must be specified')
+    return handleErrorAndReturnNext(500, 'Player id must be specified', res, next)
   }
   let player = req.query.player
 
@@ -195,7 +195,7 @@ cardRoute.route('/AssignUnassignedCard').get((req, res, next) => {
         return next(error)
       } else {
         if (!data || !data.length) {
-          throw new Error('No free entry was found')
+          return handleErrorAndReturnNext(500, 'No free entry was found', res, next)
         }
         Card.findByIdAndUpdate(
           data[0]._id,
@@ -207,7 +207,7 @@ cardRoute.route('/AssignUnassignedCard').get((req, res, next) => {
               return next(error)
             } else {
               if (!data) {
-                throw new Error('No free entry was found')
+                return handleErrorAndReturnNext(500, 'The found free entry can no longer be found', res, next)
               }
               res.json(data)
               console.log(`${data.person} has been assigned to player ${player}`)
@@ -253,7 +253,7 @@ cardRoute.route('/GameResult').get((req, res, next) => {
         return next(error)
       } 
       if (!data || !data.length) {
-        throw new Error('No player found')
+        return handleErrorAndReturnNext(500, 'No player found', res, next)
       }
       if (data.length < TOTAL_NUMER_OF_PERSONS) {
           let already_selected = data
@@ -270,7 +270,7 @@ cardRoute.route('/GameResult').get((req, res, next) => {
                 !data ||
                 !data.length ||
                 data.length < TOTAL_NUMER_OF_PERSONS - already_selected.length) {
-                throw new Error('Not enough free cards')
+                return handleErrorAndReturnNext(500, 'Not enough free cards', res, next)
               }
               Card.updateMany(
                 { _id: { $in: data.map(datum => datum._id) } },
@@ -287,7 +287,7 @@ cardRoute.route('/GameResult').get((req, res, next) => {
                         return next(error)
                       } 
                       if (!data || !data.length || data.length < TOTAL_NUMER_OF_PERSONS) {
-                        throw new Error('Not enough card selected')
+                        return handleErrorAndReturnNext(500, 'Not enough card selected', res, next)
                       }
                       res.json(data)
                     })
@@ -313,14 +313,19 @@ cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
         console.log(error)
         return next(error)
       }
-      console.log(data)
       if (data.n != data.nModified) {
-        throw new Error('Some matched card were not modified properly')
+        return handleErrorAndReturnNext(500, 'Some matched card were not modified properly', res, next)
       }
       console.log('All unassigned card have been unselected')
       res.json(data.nModified)
     }
   )
 })
+
+// Handle error
+function handleErrorAndReturnNext(code, message, res, next) {
+  console.log(message)
+  res.status(code).send(message)
+}
 
 module.exports = cardRoute;
