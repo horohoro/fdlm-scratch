@@ -9,6 +9,9 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
 import { ResultComponent } from './result/result.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { AddCardComponent } from './add-card/add-card.component'; 
 
 
 @NgModule({
@@ -16,14 +19,17 @@ import { MatButtonModule } from '@angular/material/button';
     AppComponent,
     PlayerSelectorComponent,
     CardDetailComponent,
-    ResultComponent
+    ResultComponent,
+    AddCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

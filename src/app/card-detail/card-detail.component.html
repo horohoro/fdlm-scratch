@@ -1,1 +1,4 @@
 <p>{{card.person}}</p>
+
+<a mat-raised-button color="primary" [routerLink]="['/result']" [queryParams]="{player: this.player}">To Result</a><br/>
+<a mat-raised-button color="accent" (click)="reloadComponent()">Refresh</a><br/>

@@ -85,16 +85,16 @@ export class BackendService {
   }
 
   // Unassign player(s)
-  UnassignPlayer(player? : number): Observable<Card[]> {
+  UnassignPlayer(player? : number): Observable<number> {
     let API_URL = `${this.endpoint}/UnassignPlayer`;
     
     let params = {}
     if (player) {
       params = {player: player}
     }
-    return this.http.get<Card[]>(API_URL, { headers: this.headers, params: params })
+    return this.http.get<number>(API_URL, { headers: this.headers, params: params })
       .pipe(
-        map((res: Card[]) => {
+        map((res: number) => {
           return res;
         }),
         catchError(BackendService.errorMgmt)
@@ -115,12 +115,12 @@ export class BackendService {
   }
 
   // Unselect (reset) card that are not assigned to users already
-  UnselectUnassignedCards(): Observable<Card[]> {
+  UnselectUnassignedCards(): Observable<number> {
     let API_URL = `${this.endpoint}/UnselectUnassignedCards`;
 
-    return this.http.get<Card[]>(API_URL, { headers: this.headers })
+    return this.http.get<number>(API_URL, { headers: this.headers })
       .pipe(
-        map((res: Card[]) => {
+        map((res: number) => {
           return res;
         }),
         catchError(BackendService.errorMgmt)

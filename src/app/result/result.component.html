@@ -1,1 +1,9 @@
-<p>result works!</p>
+<mat-list>
+    <mat-list-item *ngFor="let card of cards">
+        {{card.person}}
+    </mat-list-item>
+</mat-list>
+
+<a mat-raised-button color="primary" (click)="newGame()">New Game !</a><br/>
+<a mat-raised-button color="accent" (click)="leaveGame()">Leave game</a><br/>
+<button mat-raised-button color="warn" (click)="resetAllCards()">Hard Reset</button><br/>
