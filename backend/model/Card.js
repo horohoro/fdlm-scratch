@@ -4,16 +4,20 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema
 let Card = new Schema({
-  person: {
-    type: String,
-    required: true
-  },
-  player: {
-    type: Number
-  },
-  selected: {
-    type: Boolean
-  }
+  person: new Schema({
+    en: String,
+    ja: String,
+    fr: String
+  }),
+  wikipedia: new Schema({
+    en: String,
+    ja: String,
+    fr: String
+  }),
+  player: Number,
+  selected: Boolean,
+  inputLang: String,
+  difficulty: String
 }, {
   collection: 'Cards'
 })

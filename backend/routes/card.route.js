@@ -1,29 +1,101 @@
 const express = require('express');
-const next = require('next');
 const app = express();
 const cardRoute = express.Router();
+const wiki = require('wikijs').default;
 
 // Card model
 let Card = require('../model/Card');
 
 const TOTAL_NUMER_OF_PERSONS = 8
+const WIKI_API = {
+  en: 'https://en.wikipedia.org/w/api.php',
+  fr: 'https://fr.wikipedia.org/w/api.php',
+  jp: 'https://ja.wikipedia.org/w/api.php'
+} 
+
+function getTitleFromWikiURL(url) {
+  return url.split('/').reverse()[0].split('?')[0]
+}
+
+// Return a promise that edits the input card and return also this input card
+function searchAndSet(card, search, sets) {
+  let promise = new Promise(() => 0)
+
+  // If wikipedia was not input, let's search for it
+  if (!card.wikipedia || !card.wikipedia[search]) {
+    promise = wiki({ apiUrl: WIKI_API[search]}).find(card.person[search]).then(page => {
+      card.person[search] = page.title
+
+      if (!card.wikipedia) {
+        card.wikipedia = {}
+      }
+      card.wikipedia[search] = page.canonicalurl
+    })
+  }
+
+  // Find the name and the other languages
+  return promise.then(() =>
+    wiki({ apiUrl: WIKI_API[search]})
+      .page(getTitleFromWikiURL(card.wikipedia[search]))
+      .then(page => page.langlinks())
+      .then(langlinks => {
+        sets.forEach((set) => {
+          let setEntry = langlinks
+            .filter(langlink => langlink.lang.startsWith(set))
+            .sort(langlink => langlink.lang)[0]
+
+          if (!card.person) {
+            card.person = {}
+          }
+          card.person[set] = setEntry.title
+          
+          if (!card.wikipedia) {
+            card.wikipedia = {}
+          }
+          card.wikipedia[set] = setEntry.url
+        })
+        return card
+      })
+    )
+}
 
 // REST
 // Add Card
 cardRoute.route('/card').post((req, res, next) => {
   console.log(req.originalUrl)
 
-  Card.create(req.body, (error, data) => {
-    if (error) {
-      return next(error)
-    } else {
-      res.json(data)
-    }
-  })
+  // TODO(horo): check if duplicate
+  const inputLang = req.body.inputLang
+  let card = req.body
+
+  let promise = new Promise(() => card)
+
+  switch (inputLang) {
+    case 'en':
+      promise = searchAndSet(card, 'en', ['fr', 'ja'])
+      break
+    case 'ja':
+      promise = searchAndSet(card, 'ja', ['en', 'fr'])
+      break
+    case 'fr':
+      promise = searchAndSet(card, 'fr', ['en', 'ja'])
+      break
+  }
+
+  promise.then(() => 
+    Card.create(card, (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        console.log(`${data.person} has been added properly`)
+        res.json(data)
+      }
+    })
+  )
 });
 
 // Get all card
-cardRoute.route('/cards').get((req, res) => {  
+cardRoute.route('/cards').get((req, res, next) => {  
   console.log(req.originalUrl)
 
   Card.find((error, data) => {
@@ -36,7 +108,7 @@ cardRoute.route('/cards').get((req, res) => {
 })
 
 // Get random Card
-cardRoute.route('/card').get((req, res) => {
+cardRoute.route('/card').get((req, res, next) => {
   console.log(req.originalUrl)
 
   Card.aggregate([{$sample: {size : 1}}]).exec((error, data) => {
@@ -53,7 +125,7 @@ cardRoute.route('/card').get((req, res) => {
 })
 
 // Get single card by ID
-cardRoute.route('/card/:id').get((req, res) => {
+cardRoute.route('/card/:id').get((req, res, next) => {
   console.log(req.originalUrl)
 
   Card.findById(req.params.id, (error, data) => {
@@ -102,7 +174,7 @@ cardRoute.route('/card/:id').delete((req, res, next) => {
 
 // SOAP
 // Pick and assign an unassigned card
-cardRoute.route('/AssignUnassignedCard').get((req, res) => {
+cardRoute.route('/AssignUnassignedCard').get((req, res, next) => {
   console.log(req.originalUrl)
 
   if (!req.query.player) {
@@ -147,7 +219,7 @@ cardRoute.route('/AssignUnassignedCard').get((req, res) => {
 })
 
 // Unassign player(s)
-cardRoute.route('/UnassignPlayer').get((req, res) => {
+cardRoute.route('/UnassignPlayer').get((req, res, next) => {
   console.log(req.originalUrl)
 
   let filter = {}
@@ -170,7 +242,7 @@ cardRoute.route('/UnassignPlayer').get((req, res) => {
 })
 
 // Return result
-cardRoute.route('/GameResult').get((req, res) => {
+cardRoute.route('/GameResult').get((req, res, next) => {
   console.log(req.originalUrl)
 
   Card.find(
@@ -230,7 +302,7 @@ cardRoute.route('/GameResult').get((req, res) => {
 })
 
 // Unselect (reset) card that are not assigned to users already
-cardRoute.route('/UnselectUnassignedCards').get((req, res) => {
+cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
   console.log(req.originalUrl)
 
   Card.updateMany(
