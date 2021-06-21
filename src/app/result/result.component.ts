@@ -26,8 +26,8 @@ export class ResultComponent implements OnInit, OnDestroy {
     }
 
   ngOnInit(): void {
-    this.backendService.GameResult().subscribe(res => 
-      this.cards = res);
+    this.backendService.GameResult().subscribe(
+      res => this.cards = res);
   }
 
   ngOnDestroy(): void {

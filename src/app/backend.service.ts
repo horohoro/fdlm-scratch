@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Card } from './card';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,9 @@ export class BackendService {
   endpoint: string = 'http://localhost:8000/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private matSnackBar: MatSnackBar) { }
 
   // REST (not used ?)
   // Add card
@@ -20,7 +23,11 @@ export class BackendService {
     let API_URL = `${this.endpoint}/card`;
     return this.http.post<Card>(API_URL, data)
       .pipe(
-        catchError(BackendService.errorMgmt)
+        map((res: Card) => {
+          this.matSnackBar.open(`${res.person.en!} was added sucessfully`, 'Close', {duration: 2000});
+          return res;
+        }),
+        catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
 
@@ -37,7 +44,7 @@ export class BackendService {
         map((res: Card) => {
           return res;
         }),
-        catchError(BackendService.errorMgmt)
+        catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
 
@@ -49,7 +56,7 @@ export class BackendService {
         map((res: Card) => {
           return res;
         }),
-        catchError(BackendService.errorMgmt)
+        catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
 
@@ -58,7 +65,7 @@ export class BackendService {
     let API_URL = `${this.endpoint}/card/${id}`;
     return this.http.put<Card>(API_URL, data, { headers: this.headers })
       .pipe(
-        catchError(BackendService.errorMgmt)
+        catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
 
@@ -67,7 +74,7 @@ export class BackendService {
     var API_URL = `${this.endpoint}/card/${id}`;
     return this.http.delete<Card>(API_URL)
       .pipe(
-        catchError(BackendService.errorMgmt)
+        catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
 
@@ -80,7 +87,7 @@ export class BackendService {
         map((res: Card) => {
           return res;
         }),
-        catchError(BackendService.errorMgmt)
+        catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
 
@@ -97,7 +104,7 @@ export class BackendService {
         map((res: number) => {
           return res;
         }),
-        catchError(BackendService.errorMgmt)
+        catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
 
@@ -110,7 +117,7 @@ export class BackendService {
         map((res: Card[]) => {
           return res;
         }),
-        catchError(BackendService.errorMgmt)
+        catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
 
@@ -123,23 +130,26 @@ export class BackendService {
         map((res: number) => {
           return res;
         }),
-        catchError(BackendService.errorMgmt)
+        catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
 
   // Private methods
   // Error handling 
-  private static errorMgmt(error: HttpErrorResponse) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // Get client-side error
-      errorMessage = error.error.message;
-    } else {
-      // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.error}`;
+  private static errorMgmt(matSnackBar: MatSnackBar) {
+    return (error: HttpErrorResponse) => {
+      let errorMessage = '';
+      if (error.error instanceof ErrorEvent) {
+        // Get client-side error
+        errorMessage = error.error.message;
+      } else {
+        // Get server-side error
+        errorMessage = `Error Code: ${error.status}\nMessage: ${error.error}`;
+      }
+      matSnackBar.open(errorMessage, 'Close', {duration: 2000})
+      console.log(errorMessage);
+      return throwError(errorMessage);
     }
-    console.log(errorMessage);
-    return throwError(errorMessage);
   }
 
 }

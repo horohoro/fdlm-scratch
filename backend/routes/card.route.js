@@ -14,38 +14,57 @@ const WIKI_API = {
 } 
 
 function getTitleFromWikiURL(url) {
-  return url.split('/').reverse()[0].split('?')[0]
+  return decodeURI(url.split('/').reverse()[0].split('?')[0])
 }
 
 // Return a promise that edits the input card and return also this input card
-function searchAndSet(card, search, sets) {
-  let promise = new Promise(() => 0)
+function searchAndSet(card, search, sets, res) {
+  let promise = new Promise((resolve, reject) => resolve(0))
 
   // If wikipedia was not input, let's search for it
   if (!card.wikipedia || !card.wikipedia[search]) {
-    promise = wiki({ apiUrl: WIKI_API[search]}).find(card.person[search]).then(page => {
-      card.person[search] = page.title
+    promise = wiki({ apiUrl: WIKI_API[search]}).find(card.person[search]).then(
+      page => {
+        card.person[search] = page.title
 
-      if (!card.wikipedia) {
-        card.wikipedia = {}
-      }
-      card.wikipedia[search] = page.canonicalurl
-    })
+        if (!card.wikipedia) {
+          card.wikipedia = {}
+        }
+        card.wikipedia[search] = page.canonicalurl
+      },
+      err => { throw Error('Person not found') }
+    )
   }
 
   // Find the name and the other languages
-  return promise.then(() =>
-    wiki({ apiUrl: WIKI_API[search]})
-      .page(getTitleFromWikiURL(card.wikipedia[search]))
-      .then(page => page.langlinks())
-      .then(langlinks => {
+  return promise
+    .then(
+      () => wiki({ apiUrl: WIKI_API[search]})
+        .page(getTitleFromWikiURL(card.wikipedia[search])),
+      (err) => { throw err })
+    .then(
+      page => {
+        if (!page) {
+          throw Error('Wiki page not found')
+        }
+        
+        if (!card.person) {
+          card.person = {}
+        }
+        card.person[search] = page.title
+
+        return page.langlinks()
+      },
+      err => { throw err })
+    .then(
+      langlinks => {
         sets.forEach((set) => {
           let setEntry = langlinks
             .filter(langlink => langlink.lang.startsWith(set))
             .sort(langlink => langlink.lang)[0]
 
-          if (!card.person) {
-            card.person = {}
+          if (!setEntry) {
+            throw Error('Article not available in all languages')
           }
           card.person[set] = setEntry.title
           
@@ -54,9 +73,8 @@ function searchAndSet(card, search, sets) {
           }
           card.wikipedia[set] = setEntry.url
         })
-        return card
-      })
-    )
+      },
+      err => { throw err })
 }
 
 // REST
@@ -68,29 +86,37 @@ cardRoute.route('/card').post((req, res, next) => {
   const inputLang = req.body.inputLang
   let card = req.body
 
-  let promise = new Promise(() => card)
+  let promise = new Promise((resolve, reject) => resolve(card))
 
   switch (inputLang) {
     case 'en':
-      promise = searchAndSet(card, 'en', ['fr', 'ja'])
+      promise = searchAndSet(card, 'en', ['fr', 'ja'], res)
       break
     case 'ja':
-      promise = searchAndSet(card, 'ja', ['en', 'fr'])
+      promise = searchAndSet(card, 'ja', ['en', 'fr'], res)
       break
     case 'fr':
-      promise = searchAndSet(card, 'fr', ['en', 'ja'])
+      promise = searchAndSet(card, 'fr', ['en', 'ja'], res)
       break
   }
 
-  promise.then(() => 
-    Card.create(card, (error, data) => {
-      if (error) {
-        return next(error)
-      } else {
-        console.log(`${data.person} has been added properly`)
-        res.json(data)
-      }
-    })
+  promise.then(
+    (newCard) => {
+      Card.create(
+        card,
+        (error, data) => {
+          if (error) {
+            return next(error)
+          } else {
+            console.log(`${data.person} has been added properly`)
+            res.json(data)
+          }
+        }
+      )
+    },
+    (err) => {
+      return handleErrorAndReturnNext(500, err.message, res)
+    }
   )
 });
 
@@ -178,7 +204,7 @@ cardRoute.route('/AssignUnassignedCard').get((req, res, next) => {
   console.log(req.originalUrl)
 
   if (!req.query.player) {
-    return handleErrorAndReturnNext(500, 'Player id must be specified', res, next)
+    return handleErrorAndReturnNext(500, 'Player id must be specified', res)
   }
   let player = req.query.player
 
@@ -195,7 +221,7 @@ cardRoute.route('/AssignUnassignedCard').get((req, res, next) => {
         return next(error)
       } else {
         if (!data || !data.length) {
-          return handleErrorAndReturnNext(500, 'No free entry was found', res, next)
+          return handleErrorAndReturnNext(500, 'No free entry was found', res)
         }
         Card.findByIdAndUpdate(
           data[0]._id,
@@ -207,7 +233,7 @@ cardRoute.route('/AssignUnassignedCard').get((req, res, next) => {
               return next(error)
             } else {
               if (!data) {
-                return handleErrorAndReturnNext(500, 'The found free entry can no longer be found', res, next)
+                return handleErrorAndReturnNext(500, 'The found free entry can no longer be found', res)
               }
               res.json(data)
               console.log(`${data.person} has been assigned to player ${player}`)
@@ -253,7 +279,7 @@ cardRoute.route('/GameResult').get((req, res, next) => {
         return next(error)
       } 
       if (!data || !data.length) {
-        return handleErrorAndReturnNext(500, 'No player found', res, next)
+        return handleErrorAndReturnNext(500, 'No player found', res)
       }
       if (data.length < TOTAL_NUMER_OF_PERSONS) {
           let already_selected = data
@@ -270,7 +296,7 @@ cardRoute.route('/GameResult').get((req, res, next) => {
                 !data ||
                 !data.length ||
                 data.length < TOTAL_NUMER_OF_PERSONS - already_selected.length) {
-                return handleErrorAndReturnNext(500, 'Not enough free cards', res, next)
+                return handleErrorAndReturnNext(500, 'Not enough free cards', res)
               }
               Card.updateMany(
                 { _id: { $in: data.map(datum => datum._id) } },
@@ -287,7 +313,7 @@ cardRoute.route('/GameResult').get((req, res, next) => {
                         return next(error)
                       } 
                       if (!data || !data.length || data.length < TOTAL_NUMER_OF_PERSONS) {
-                        return handleErrorAndReturnNext(500, 'Not enough card selected', res, next)
+                        return handleErrorAndReturnNext(500, 'Not enough card selected', res)
                       }
                       res.json(data)
                     })
@@ -314,7 +340,7 @@ cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
         return next(error)
       }
       if (data.n != data.nModified) {
-        return handleErrorAndReturnNext(500, 'Some matched card were not modified properly', res, next)
+        return handleErrorAndReturnNext(500, 'Some matched card were not modified properly', res)
       }
       console.log('All unassigned card have been unselected')
       res.json(data.nModified)
@@ -323,7 +349,7 @@ cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
 })
 
 // Handle error
-function handleErrorAndReturnNext(code, message, res, next) {
+function handleErrorAndReturnNext(code, message, res,) {
   console.log(message)
   res.status(code).send(message)
 }

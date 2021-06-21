@@ -1,5 +1,5 @@
-<form [formGroup]="addCardForm" (ngSubmit)="onSubmit()">
-    <p>You may set the Person (fictional character or historical figure) or its Wikipedia URL</p>
+<form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="addCardForm" (ngSubmit)="onSubmit()">
+    <div>You may set the Person (fictional character or historical figure) or its Wikipedia URL</div>
 
     <mat-form-field appearance="fill">
         <mat-label>Person</mat-label>
