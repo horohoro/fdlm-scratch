@@ -6,6 +6,7 @@ let express = require('express'),
 
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
+console.log(`Connecting to ${dataBaseConfig.db}`)
 mongoose.connect(dataBaseConfig.db, dataBaseConfig.options)
   .then(
     mongoose => {
