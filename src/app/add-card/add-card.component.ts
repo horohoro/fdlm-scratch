@@ -1,10 +1,14 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { BackendService } from '../backend.service';
 import { Card } from '../card';
+import { map } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
-const REGEXP_WIKI_URL = /https:\/\/(en|ja|fr).wikipedia.org\/wiki\/[^\\]+/;
+
+const REGEXP_WIKI_URL: RegExp = /^https:\/\/(en|ja|fr).wikipedia.org\/wiki\/[^/]+$/;
 
 @Injectable({providedIn:'root'})
 @Component({
@@ -14,35 +18,76 @@ const REGEXP_WIKI_URL = /https:\/\/(en|ja|fr).wikipedia.org\/wiki\/[^\\]+/;
 })
 export class AddCardComponent implements OnInit {
   addCardForm = this.formBuilder.group({
-    person: new FormControl(undefined),
-    wikipedia: new FormControl(undefined, [Validators.pattern(REGEXP_WIKI_URL)]),
-    inputLang: new FormControl('fr', [Validators.required]), // default FR
-    difficulty: new FormControl('medium'),
+    person: this.formBuilder.group({
+      en: new FormControl(undefined),
+      fr: new FormControl(undefined),
+      ja: new FormControl(undefined),
+    }),
+    wikipedia: this.formBuilder.group({
+      en: new FormControl(undefined, [Validators.pattern(REGEXP_WIKI_URL)]),
+      fr: new FormControl(undefined, [Validators.pattern(REGEXP_WIKI_URL)]),
+      ja: new FormControl(undefined, [Validators.pattern(REGEXP_WIKI_URL)]),
+    }),
+    inputLang: new FormControl(undefined), // default FR
+    difficulty: new FormControl('medium', [Validators.required]),
   });
 
   constructor(
     private formBuilder: FormBuilder,
-    private backendService: BackendService) { }
+    private backendService: BackendService,
+    private matSnackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    let card = new Card();
-    card.inputLang = this.addCardForm.value.inputLang;
-    if (this.addCardForm.value.person) {
-      card.setPerson(this.addCardForm.value.person, this.addCardForm.value.inputLang);
-    }
-    if (this.addCardForm.value.wikipedia) {
-      card.setWikipedia(this.addCardForm.value.wikipedia, this.addCardForm.value.inputLang);
-    }
-    if (this.addCardForm.value.difficulty) {
-      card.difficulty = this.addCardForm.value.difficulty
-    }
-    this.backendService.AddCard(card).subscribe(res => {  
-      this.addCardForm.controls['person'].reset();
+    let card : Card = new Card();
+    card.copyFrom(this.addCardForm.value);
+
+    this.backendService.AddCard(card).subscribe(res => {
       this.addCardForm.controls['wikipedia'].reset();
-    });
+      this.addCardForm.controls['person'].reset();
+    })
+  }
+
+  loadAndSubmit(): void {
+    
+    const checkAndSubmit = () : boolean => {
+      let card : Card = new Card();
+      card.copyFrom(this.addCardForm.value);
+      if (card.isInputReady()) {
+        this.onSubmit();
+        return true
+      }
+      return false
+    }
+
+    if (!checkAndSubmit()) {
+      this.preloadCard().pipe(
+        map(() => {
+          return checkAndSubmit()
+        })
+      ).subscribe(inputReady => {
+        if (!inputReady) {
+          this.matSnackBar.open(`Form was not subbmited some fields are missing`, 'Close', {duration: 2000});
+        }
+      })
+    }
+  }
+
+  load() {
+    this.preloadCard().subscribe()
+  }
+
+  private preloadCard(): Observable<void> {
+    let card : Card = new Card();
+    card.copyFrom(this.addCardForm.value);
+
+    return this.backendService.PreloadCard(card).pipe(
+      map((card: Card) => {
+        this.addCardForm.patchValue(card)
+      })
+    )
   }
 
 }

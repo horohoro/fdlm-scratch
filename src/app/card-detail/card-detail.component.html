@@ -2,13 +2,13 @@
 <div fxLayout="column" fxLayoutAlign="space-evenly center">
     <mat-list fxLayout="column" fxLayoutAlign="space-evenly center">
         <mat-list-item>
-            🇺🇸<a [href]="card.wikipedia?.en" target="_blank">{{card.person.en}}</a>
+            🇺🇸<a [href]="card.wikipedia?.en" target="_blank">{{card.person!.en}}</a>
         </mat-list-item>
         <mat-list-item>
-            🇯🇵<a [href]="card.wikipedia?.ja" target="_blank">{{card.person.ja}}</a>
+            🇯🇵<a [href]="card.wikipedia?.ja" target="_blank">{{card.person!.ja}}</a>
         </mat-list-item>
         <mat-list-item>
-            🇫🇷<a [href]="card.wikipedia?.fr" target="_blank">{{card.person.fr}}</a>
+            🇫🇷<a [href]="card.wikipedia?.fr" target="_blank">{{card.person!.fr}}</a>
         </mat-list-item>
     </mat-list>
 

@@ -24,7 +24,7 @@ export class BackendService {
     return this.http.post<Card>(API_URL, data)
       .pipe(
         map((res: Card) => {
-          this.matSnackBar.open(`${res.person.en!} was added sucessfully`, 'Close', {duration: 2000});
+          this.matSnackBar.open(`${res.person!.en!} was added sucessfully`, 'Close', {duration: 2000});
           return res;
         }),
         catchError(BackendService.errorMgmt(this.matSnackBar))
@@ -128,6 +128,19 @@ export class BackendService {
     return this.http.get<number>(API_URL, { headers: this.headers })
       .pipe(
         map((res: number) => {
+          return res;
+        }),
+        catchError(BackendService.errorMgmt(this.matSnackBar))
+      )
+  }
+
+  // Preload a card based on limited information
+  PreloadCard(card: Card): Observable<Card>{
+    let API_URL = `${this.endpoint}/PreloadCard`;
+
+    return this.http.post<Card>(API_URL, card)
+      .pipe(
+        map((res: Card) => {
           return res;
         }),
         catchError(BackendService.errorMgmt(this.matSnackBar))

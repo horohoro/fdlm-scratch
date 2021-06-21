@@ -11,71 +11,8 @@ const WIKI_API = {
   en: 'https://en.wikipedia.org/w/api.php',
   fr: 'https://fr.wikipedia.org/w/api.php',
   jp: 'https://ja.wikipedia.org/w/api.php'
-} 
-
-function getTitleFromWikiURL(url) {
-  return decodeURI(url.split('/').reverse()[0].split('?')[0])
 }
-
-// Return a promise that edits the input card and return also this input card
-function searchAndSet(card, search, sets, res) {
-  let promise = new Promise((resolve, reject) => resolve(0))
-
-  // If wikipedia was not input, let's search for it
-  if (!card.wikipedia || !card.wikipedia[search]) {
-    promise = wiki({ apiUrl: WIKI_API[search]}).find(card.person[search]).then(
-      page => {
-        card.person[search] = page.title
-
-        if (!card.wikipedia) {
-          card.wikipedia = {}
-        }
-        card.wikipedia[search] = page.canonicalurl
-      },
-      err => { throw Error('Person not found') }
-    )
-  }
-
-  // Find the name and the other languages
-  return promise
-    .then(
-      () => wiki({ apiUrl: WIKI_API[search]})
-        .page(getTitleFromWikiURL(card.wikipedia[search])),
-      (err) => { throw err })
-    .then(
-      page => {
-        if (!page) {
-          throw Error('Wiki page not found')
-        }
-        
-        if (!card.person) {
-          card.person = {}
-        }
-        card.person[search] = page.title
-
-        return page.langlinks()
-      },
-      err => { throw err })
-    .then(
-      langlinks => {
-        sets.forEach((set) => {
-          let setEntry = langlinks
-            .filter(langlink => langlink.lang.startsWith(set))
-            .sort(langlink => langlink.lang)[0]
-
-          if (!setEntry) {
-            throw Error('Article not available in all languages')
-          }
-          card.person[set] = setEntry.title
-          
-          if (!card.wikipedia) {
-            card.wikipedia = {}
-          }
-          card.wikipedia[set] = setEntry.url
-        })
-      },
-      err => { throw err })
-}
+const ALL_LANGUAGUES = ['en', 'fr', 'ja']
 
 // REST
 // Add Card
@@ -83,39 +20,16 @@ cardRoute.route('/card').post((req, res, next) => {
   console.log(req.originalUrl)
 
   // TODO(horo): check if duplicate
-  const inputLang = req.body.inputLang
-  let card = req.body
 
-  let promise = new Promise((resolve, reject) => resolve(card))
-
-  switch (inputLang) {
-    case 'en':
-      promise = searchAndSet(card, 'en', ['fr', 'ja'], res)
-      break
-    case 'ja':
-      promise = searchAndSet(card, 'ja', ['en', 'fr'], res)
-      break
-    case 'fr':
-      promise = searchAndSet(card, 'fr', ['en', 'ja'], res)
-      break
-  }
-
-  promise.then(
-    (newCard) => {
-      Card.create(
-        card,
-        (error, data) => {
-          if (error) {
-            return next(error)
-          } else {
-            console.log(`${data.person} has been added properly`)
-            res.json(data)
-          }
-        }
-      )
-    },
-    (err) => {
-      return handleErrorAndReturnNext(500, err.message, res)
+  Card.create(
+    req.body,
+    (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        console.log(`${data.person} has been added properly`)
+        res.json(data)
+      }
     }
   )
 });
@@ -348,10 +262,143 @@ cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
   )
 })
 
+// Load 
+cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
+  console.log(req.originalUrl)
+
+  Card.updateMany(
+    { player: { $exists: false }, selected: true },
+    { $unset: ['player', 'selected'] },
+    (error, data) => {
+      if (error) {
+        console.log(error)
+        return next(error)
+      }
+      if (data.n != data.nModified) {
+        return handleErrorAndReturnNext(500, 'Some matched card were not modified properly', res)
+      }
+      console.log('All unassigned card have been unselected')
+      res.json(data.nModified)
+    }
+  )
+})
+
+// Preload a card based on limited information
+cardRoute.route('/PreloadCard').post((req, res, next) => {
+  console.log(req.originalUrl)
+
+  let card = req.body
+  let search
+  let fromPerson
+
+  if (card.inputLang) {
+    search = card.inputLang;
+    fromPerson = !(card.wikipedia && card.wikipedia[search]) ;
+  } else { // !card.inputLang => let's check what has been input
+    if (card.wikipedia) {
+      if (card.wikipedia.en) {
+        search = 'en'
+        card.inputLang = 'en'
+        fromPerson = false
+      } else if (card.wikipedia.fr) {
+        search = 'fr'
+        card.inputLang = 'fr'
+        fromPerson = false
+      } else if (card.wikipedia.ja) {
+        search = 'ja'
+        card.inputLang = 'ja'
+        fromPerson = false
+      }
+    } 
+    if (!search && card.person) { // !card.wikipedia => let's check the persons
+      fromPerson = true
+      if (card.person.en) {
+        search = 'en'
+        card.inputLang = 'en'
+      } else if (card.person.fr) {
+        search = 'fr'
+        card.inputLang = 'fr'
+      } else if (card.person.ja) {
+        search = 'ja'
+        card.inputLang = 'ja'
+      }     
+    }
+  }
+
+  if (!search || fromPerson === undefined || !card.inputLang) {
+    handleErrorAndReturnNext(400, 'missing fields', res)
+    return
+  }
+
+  const sets = ALL_LANGUAGUES.filter(x => x != search);
+
+  let promise = new Promise((resolve, reject) => resolve(0))
+
+  // If wikipedia was not input, let's search for it
+  if (fromPerson) {
+    promise = wiki({ apiUrl: WIKI_API[search]}).find(card.person[search]).then(
+      page => {
+        card.person[search] = page.title
+
+        if (!card.wikipedia) {
+          card.wikipedia = {}
+        }
+        card.wikipedia[search] = page.canonicalurl
+      },
+      err => { throw Error('Person not found') }
+    )
+  }
+
+  // Find the name and the other languages
+  return promise
+    .then(
+      () => wiki({ apiUrl: WIKI_API[search]})
+        .page(getTitleFromWikiURL(card.wikipedia[search])),
+      (err) => { throw err })
+    .then(
+      page => {
+        if (!page) {
+          throw Error('Wiki page not found')
+        }
+        
+        if (!card.person) {
+          card.person = {}
+        }
+        card.person[search] = page.title
+
+        return page.langlinks()
+      },
+      err => { throw err })
+    .then(
+      langlinks => {
+        sets.forEach((set) => {
+          let setEntry = langlinks
+            .filter(langlink => langlink.lang.startsWith(set))
+            .sort(langlink => langlink.lang)[0]
+
+          if (!setEntry) {
+            throw Error('Article not available in all languages')
+          }
+          card.person[set] = setEntry.title
+          
+          if (!card.wikipedia) {
+            card.wikipedia = {}
+          }
+          card.wikipedia[set] = setEntry.url
+        })
+        res.json(card)
+      },
+      err => handleErrorAndReturnNext(500, err.message, res))
+})
+
 // Handle error
 function handleErrorAndReturnNext(code, message, res,) {
   console.log(message)
   res.status(code).send(message)
+}
+
+function getTitleFromWikiURL(url) {
+  return decodeURI(url.split('/').reverse()[0].split('?')[0])
 }
 
 module.exports = cardRoute;

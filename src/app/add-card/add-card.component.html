@@ -1,24 +1,50 @@
 <form fxLayout="column" fxLayoutAlign="space-evenly center" [formGroup]="addCardForm" (ngSubmit)="onSubmit()">
     <div>You may set the Person (fictional character or historical figure) or its Wikipedia URL</div>
 
-    <mat-form-field appearance="fill">
-        <mat-label>Person</mat-label>
-        <input matInput formControlName="person">
-    </mat-form-field>
+    <div formGroupName="person" fxLayout="column" fxLayoutAlign="space-evenly center">
+        <mat-form-field appearance="fill">
+            <mat-label>Person (English)</mat-label>
+            <input matInput formControlName="en">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Person (French)</mat-label>
+            <input matInput formControlName="fr">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Person (Japanese)</mat-label>
+            <input matInput formControlName="ja">
+        </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div formGroupName="wikipedia" fxLayout="column" fxLayoutAlign="space-evenly center">
+        <mat-form-field appearance="fill">
+            <mat-label>Wikipedia (English)</mat-label>
+            <input matInput formControlName="en">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Wikipedia (French)</mat-label>
+            <input matInput formControlName="fr">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Wikipedia (Japanese)</mat-label>
+            <input matInput formControlName="ja">
+        </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
 
     <mat-form-field appearance="fill">
-        <mat-label>Wikipedia URL</mat-label>
-        <input matInput formControlName="wikipedia">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-        <mat-label>Language</mat-label>
-        <mat-select required formControlName="inputLang">
+        <mat-label>Input language</mat-label>
+        <mat-select formControlName="inputLang">
             <mat-option value="fr">Francais</mat-option>
             <mat-option value="en">English</mat-option>
             <mat-option value="ja">日本語</mat-option>
         </mat-select>
     </mat-form-field>
+
+    <mat-divider></mat-divider>
 
     <mat-form-field appearance="fill">
         <mat-label>Difficulty</mat-label>
@@ -29,5 +55,7 @@
             <mat-option value="hard">Hard</mat-option>
         </mat-select>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Add card</button>
+
+    <a mat-raised-button color="primary" (click)="loadAndSubmit()">Load and submit</a>
+    <a mat-raised-button color="accent" (click)="load()">Load only</a>
 </form>
