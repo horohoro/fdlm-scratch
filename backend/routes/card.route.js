@@ -10,7 +10,7 @@ const TOTAL_NUMER_OF_PERSONS = 8
 const WIKI_API = {
   en: 'https://en.wikipedia.org/w/api.php',
   fr: 'https://fr.wikipedia.org/w/api.php',
-  jp: 'https://ja.wikipedia.org/w/api.php'
+  ja: 'https://ja.wikipedia.org/w/api.php'
 }
 const ALL_LANGUAGUES = ['en', 'fr', 'ja']
 
