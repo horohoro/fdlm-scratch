@@ -51,11 +51,12 @@ export class AddCardComponent implements OnInit {
   }
 
   loadAndSubmit(): void {
-    
     const checkAndSubmit = () : boolean => {
       let card : Card = new Card();
       card.copyFrom(this.addCardForm.value);
-      if (card.isInputReady()) {
+      
+      // Beware that if a field is invalid, the preload process will overwrite it
+      if (card.isInputReady() && this.addCardForm.valid) {
         this.onSubmit();
         return true
       }
@@ -69,7 +70,7 @@ export class AddCardComponent implements OnInit {
         })
       ).subscribe(inputReady => {
         if (!inputReady) {
-          this.matSnackBar.open(`Form was not subbmited some fields are missing`, 'Close', {duration: 2000});
+          this.matSnackBar.open(`Fields are missing or invalid.`, 'Close', {duration: 2000});
         }
       })
     }

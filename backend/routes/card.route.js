@@ -377,8 +377,10 @@ cardRoute.route('/PreloadCard').post((req, res, next) => {
             .sort(langlink => langlink.lang)[0]
 
           if (!setEntry) {
-            throw Error('Article not available in all languages')
+            console.log(`No entry found for ${card.person[search]} in ${set}`)
+            return
           }
+
           card.person[set] = setEntry.title
           
           if (!card.wikipedia) {
