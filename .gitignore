@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 
 # credentials
-/backend/database/*.json
+/backend/database/credentials.json
