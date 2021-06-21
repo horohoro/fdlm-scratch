@@ -19,18 +19,27 @@ const ALL_LANGUAGUES = ['en', 'fr', 'ja']
 cardRoute.route('/card').post((req, res, next) => {
   console.log(req.originalUrl)
 
-  // TODO(horo): check if duplicate
+  let card = req.body
 
-  Card.create(
-    req.body,
-    (error, data) => {
-      if (error) {
-        return next(error)
-      } else {
-        console.log(`${data.person} has been added properly`)
-        res.json(data)
+  checkIfExists(card).then(
+    (duplicateCard) => {
+      if (duplicateCard && duplicateCard.length && duplicateCard.length > 0) {
+        handleErrorAndReturnNext(400, `${duplicateCard.length} card for ${card.person.en} already exists.`, res)
+        return
       }
-    }
+      Card.create(
+        card,
+        (error, data) => {
+          if (error) {
+            return next(error)
+          } else {
+            console.log(`${data.person} has been added properly`)
+            res.json(data)
+          }
+        }
+      )
+    },
+    (err) => handleErrorAndReturnNext(500, err.message, res)
   )
 });
 
@@ -399,8 +408,29 @@ function handleErrorAndReturnNext(code, message, res,) {
   res.status(code).send(message)
 }
 
+// Internal function
 function getTitleFromWikiURL(url) {
   return decodeURI(url.split('/').reverse()[0].split('?')[0])
+}
+
+// Internal function
+function checkIfExists(card) {
+  let itemsToCheck = []
+
+  if (card.person) {
+      this.person = {}
+      if (card.person.en) itemsToCheck.push({"person.en": card.person.en})
+      if (card.person.fr) itemsToCheck.push({"person.fr": card.person.fr})
+      if (card.person.ja) itemsToCheck.push({"person.ja": card.person.ja})
+  }
+  if (card.wikipedia) {
+      this.wikipedia = {}
+      if (card.wikipedia.en) itemsToCheck.push({"wikipedia.en": card.wikipedia.en})
+      if (card.wikipedia.fr) itemsToCheck.push({"wikipedia.fr": card.wikipedia.fr})
+      if (card.wikipedia.ja) itemsToCheck.push({"wikipedia.ja": card.wikipedia.ja})
+  }
+
+  return Card.find({ $or: itemsToCheck }).exec()
 }
 
 module.exports = cardRoute;
