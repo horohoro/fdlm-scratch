@@ -15,6 +15,7 @@ import { Card } from '../card';
 export class ResultComponent implements OnInit, OnDestroy {
   cards?: Card[];
   private player?: number;
+  displayedColumns: string[] = ['en', 'fr', 'ja'];
 
   constructor(
     private backendService : BackendService,
