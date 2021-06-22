@@ -44,7 +44,7 @@ cardRoute.route('/card').post((req, res, next) => {
 });
 
 // Get all card
-cardRoute.route('/cards').get((req, res, next) => {  
+/*cardRoute.route('/cards').get((req, res, next) => {  
   console.log(req.originalUrl)
 
   Card.find((error, data) => {
@@ -54,10 +54,10 @@ cardRoute.route('/cards').get((req, res, next) => {
       res.json(data)
     }
   })
-})
+})*/
 
 // Get random Card
-cardRoute.route('/card').get((req, res, next) => {
+/*cardRoute.route('/card').get((req, res, next) => {
   console.log(req.originalUrl)
 
   Card.aggregate([{$sample: {size : 1}}]).exec((error, data) => {
@@ -71,10 +71,10 @@ cardRoute.route('/card').get((req, res, next) => {
       res.json(undefined);
     }
   })
-})
+})*/
 
 // Get single card by ID
-cardRoute.route('/card/:id').get((req, res, next) => {
+/*cardRoute.route('/card/:id').get((req, res, next) => {
   console.log(req.originalUrl)
 
   Card.findById(req.params.id, (error, data) => {
@@ -85,11 +85,11 @@ cardRoute.route('/card/:id').get((req, res, next) => {
       res.json(data)
     }
   })
-})
+})*/
 
 
 // Update card
-cardRoute.route('/card/:id').put((req, res, next) => {
+/*cardRoute.route('/card/:id').put((req, res, next) => {
   console.log(req.originalUrl)
 
   Card.findByIdAndUpdate(req.params.id, {
@@ -103,10 +103,10 @@ cardRoute.route('/card/:id').put((req, res, next) => {
       console.log('Card successfully updated!')
     }
   })
-})
+})*/
 
 // Delete card
-cardRoute.route('/card/:id').delete((req, res, next) => {
+/*cardRoute.route('/card/:id').delete((req, res, next) => {
   console.log(req.originalUrl)
 
   Card.findByIdAndRemove(req.params.id, (error, data) => {
@@ -119,7 +119,7 @@ cardRoute.route('/card/:id').delete((req, res, next) => {
       })
     }
   })
-})
+})*/
 
 // SOAP
 // Pick and assign an unassigned card
