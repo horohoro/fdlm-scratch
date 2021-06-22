@@ -29,3 +29,4 @@ In 2 terminals:
 - "Game" layer to be able to run multiple games on the same server
 - Additional "gamemodes" (such as increase the number of noise cards)
 - Add more language support (and revamp language support)
+- Add a display of the pulled image in the card creation form
