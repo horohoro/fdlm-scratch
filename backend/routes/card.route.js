@@ -409,7 +409,7 @@ cardRoute.route('/PreloadCard').post((req, res, next) => {
                 card.imageUrl = mainImage
               },
               err => { throw err }
-            ).catch(() => {return}) // https://github.com/dijs/wiki/issues/157
+            ).catch(err => console.log(`mainImage failed with ${err.message}`)) // https://github.com/dijs/wiki/issues/157
           ])
       },
       err => { throw err })

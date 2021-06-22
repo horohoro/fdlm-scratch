@@ -38,11 +38,13 @@ app.listen(port, () => {
 
 // Find 404 and hand over to error handler
 app.use((req, res, next) => {
+  console.log(`${req.headers['x-forwarded-for'] || req.socket.remoteAddress }`)
   next(createError(404));
 });
 
 // Index Route
 app.get('/', (req, res) => {
+  console.log(`${req.headers['x-forwarded-for'] || req.socket.remoteAddress }`)
   res.send('invaild endpoint');
 });
 
