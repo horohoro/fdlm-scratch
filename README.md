@@ -15,7 +15,8 @@ In 2 terminals:
 - Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Roadmap
-- Image for each card (embbed wikipedia image)
+- Detect and filter out shitty images
+    - Fallback to other languages for images
 - List all the cards
 - Edit a card
 - Upvote/downvote cards

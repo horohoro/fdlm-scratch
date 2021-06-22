@@ -17,7 +17,8 @@ let Card = new Schema({
   player: Number,
   selected: Boolean,
   inputLang: String,
-  difficulty: String
+  difficulty: String,
+  imageUrl: String
 }, {
   collection: 'Cards'
 })

@@ -14,6 +14,7 @@ export class Card {
     selected?: boolean;
     inputLang?: 'en' | 'fr' | 'ja';
     difficulty?: string;
+    imageUrl?: string;
 
     copyFrom(cardJSON : any) {
         if (cardJSON._id) this._id = cardJSON._id;
@@ -33,6 +34,7 @@ export class Card {
         if (cardJSON.selected) this.selected = cardJSON.selected;
         if (cardJSON.inputLang) this.inputLang = cardJSON.inputLang;
         if (cardJSON.difficulty) this.difficulty = cardJSON.difficulty;
+        if (cardJSON.imageUrl) this.imageUrl = cardJSON.imageUrl;
     }
 
     isInputReady() : boolean {

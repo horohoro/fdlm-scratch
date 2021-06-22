@@ -1,17 +1,27 @@
 
-<div fxLayout="column" fxLayoutAlign="space-evenly center">
-    <mat-list fxLayout="column" fxLayoutAlign="space-evenly center">
-        <mat-list-item>
-            🇺🇸<a [href]="card.wikipedia?.en" target="_blank">{{card.person!.en}}</a>
-        </mat-list-item>
-        <mat-list-item>
-            🇯🇵<a [href]="card.wikipedia?.ja" target="_blank">{{card.person!.ja}}</a>
-        </mat-list-item>
-        <mat-list-item>
-            🇫🇷<a [href]="card.wikipedia?.fr" target="_blank">{{card.person!.fr}}</a>
-        </mat-list-item>
-    </mat-list>
+<div fxLayout="column" fxLayoutAlign="top center" fxFlexFill>
+    <mat-card fxLayout="column" fxLayoutAlign="space-evenly center">
+        <mat-card-header>
+            <mat-card-title>Your card !</mat-card-title>
+        </mat-card-header>
+        <img fxLayoutAlign="center" mat-card-image [src]="card.imageUrl" [alt]="card.person?.en">
+        <mat-card-content>
+            <mat-list fxLayout="column" fxLayoutAlign="space-evenly center">
+                <mat-list-item>
+                    🇺🇸<a [href]="card.wikipedia?.en" target="_blank">{{card.person?.en}}</a>
+                </mat-list-item>
+                <mat-list-item>
+                    🇫🇷<a [href]="card.wikipedia?.fr" target="_blank">{{card.person?.fr}}</a>
+                </mat-list-item>
+                <mat-list-item>
+                    🇯🇵<a [href]="card.wikipedia?.ja" target="_blank">{{card.person?.ja}}</a>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
 
-    <a mat-raised-button color="primary" [routerLink]="['/result']" [queryParams]="{player: this.player}">To Result</a><br/>
-    <a mat-raised-button color="accent" (click)="reloadComponent()">Refresh</a><br/>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="space-evenly center">
+            <a mat-raised-button color="primary" [routerLink]="['/result']" [queryParams]="{player: this.player}">To Result</a><br/>
+            <a mat-raised-button color="accent" (click)="reloadComponent()">Refresh</a><br/>
+        </mat-card-actions>
+    </mat-card>
 </div>

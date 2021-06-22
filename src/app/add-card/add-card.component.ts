@@ -8,7 +8,8 @@ import { map } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 
-const REGEXP_WIKI_URL: RegExp = /^https:\/\/(en|ja|fr).wikipedia.org\/wiki\/[^/]+$/;
+const REGEXP_WIKI_URL: RegExp = /^https:\/\/(en|ja|fr).wikipedia.org\/wiki\/.+$/;
+const URL: RegExp = /^https?:\/\/\S+.[^d]+.*$/;
 
 @Injectable({providedIn:'root'})
 @Component({
@@ -28,8 +29,9 @@ export class AddCardComponent implements OnInit {
       fr: new FormControl(undefined, [Validators.pattern(REGEXP_WIKI_URL)]),
       ja: new FormControl(undefined, [Validators.pattern(REGEXP_WIKI_URL)]),
     }),
+    imageUrl: new FormControl(undefined, [Validators.pattern(URL)]),
     inputLang: new FormControl(undefined), // default FR
-    difficulty: new FormControl('medium', [Validators.required]),
+    difficulty: new FormControl('medium', [Validators.required])
   });
 
   constructor(
@@ -47,6 +49,7 @@ export class AddCardComponent implements OnInit {
     this.backendService.AddCard(card).subscribe(res => {
       this.addCardForm.controls['wikipedia'].reset();
       this.addCardForm.controls['person'].reset();
+      this.addCardForm.controls['imageUrl'].reset();
     })
   }
 

@@ -20,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table'; 
 import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card'; 
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatDividerModule } from '@angular/material/divider';
     FlexLayoutModule,
     MatSnackBarModule,
     MatTableModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

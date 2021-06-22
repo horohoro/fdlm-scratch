@@ -227,9 +227,7 @@
     "en": "https://en.wikipedia.org/wiki/Charles_de_Gaulle",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A3%E3%83%AB%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E3%82%B4%E3%83%BC%E3%83%AB"
   },
-  "__v": 0,
-  "player": 1,
-  "selected": true
+  "__v": 0
 },{
   "_id": {
     "$oid": "60cf60aa0607fd44d8794754"
@@ -275,7 +273,9 @@
     "en": "https://en.wikipedia.org/wiki/Galileo_Galilei",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%AA%E3%83%AC%E3%82%AA%E3%83%BB%E3%82%AC%E3%83%AA%E3%83%AC%E3%82%A4"
   },
-  "__v": 0
+  "__v": 0,
+  "player": 4,
+  "selected": true
 },{
   "_id": {
     "$oid": "60cf788e8cc0e64588150489"
@@ -298,7 +298,8 @@
     "en": "https://en.wikipedia.org/wiki/Archimedes",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%82%AD%E3%83%A1%E3%83%87%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "selected": true
 },{
   "_id": {
     "$oid": "60cf78af8cc0e6458815048d"
@@ -367,7 +368,8 @@
     "en": "https://en.wikipedia.org/wiki/Heracles",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%98%E3%83%BC%E3%83%A9%E3%82%AF%E3%83%AC%E3%83%BC%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "selected": true
 },{
   "_id": {
     "$oid": "60cf78e18cc0e64588150499"
@@ -1149,7 +1151,9 @@
     "en": "https://en.wikipedia.org/wiki/Andy_Warhol",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%87%E3%82%A3%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%9B%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "player": 1,
+  "selected": true
 },{
   "_id": {
     "$oid": "60cf7c2d8cc0e64588150521"
@@ -1287,7 +1291,9 @@
     "en": "https://en.wikipedia.org/wiki/William_Shakespeare",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A3%E3%83%AA%E3%82%A2%E3%83%A0%E3%83%BB%E3%82%B7%E3%82%A7%E3%82%A4%E3%82%AF%E3%82%B9%E3%83%94%E3%82%A2"
   },
-  "__v": 0
+  "__v": 0,
+  "player": 8,
+  "selected": true
 },{
   "_id": {
     "$oid": "60d00d169a1c0148047eb9a2"
@@ -2690,5 +2696,53 @@
   },
   "inputLang": "ja",
   "difficulty": "medium",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1b01c08ed0935a0e88b76"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1b01c08ed0935a0e88b77"
+    },
+    "en": "Nikola Tesla",
+    "fr": "Nikola Tesla",
+    "ja": "ニコラ・テスラ"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1b01c08ed0935a0e88b78"
+    },
+    "en": "https://en.wikipedia.org/wiki/Nikola_Tesla",
+    "fr": "https://fr.wikipedia.org/wiki/Nikola_Tesla",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%8B%E3%82%B3%E3%83%A9%E3%83%BB%E3%83%86%E3%82%B9%E3%83%A9"
+  },
+  "inputLang": "fr",
+  "difficulty": "medium",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Tesla-bulb.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1b08808ed0935a0e88b7b"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1b08808ed0935a0e88b7c"
+    },
+    "en": "Thomas Edison",
+    "fr": "Thomas Edison",
+    "ja": "トーマス・エジソン"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1b08808ed0935a0e88b7d"
+    },
+    "en": "https://en.wikipedia.org/wiki/Thomas_Edison",
+    "fr": "https://fr.wikipedia.org/wiki/Thomas_Edison",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%BC%E3%83%9E%E3%82%B9%E3%83%BB%E3%82%A8%E3%82%B8%E3%82%BD%E3%83%B3"
+  },
+  "inputLang": "fr",
+  "difficulty": "medium",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Thomas_Edison2.jpg/800px-Thomas_Edison2.jpg",
   "__v": 0
 }]

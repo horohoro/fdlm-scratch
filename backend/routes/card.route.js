@@ -271,7 +271,7 @@ cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
   )
 })
 
-// Load 
+// Load new game
 cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
   console.log(req.originalUrl)
 
@@ -375,30 +375,46 @@ cardRoute.route('/PreloadCard').post((req, res, next) => {
         }
         card.person[search] = page.title
 
-        return page.langlinks()
+        return Promise.all
+          ([ 
+            page.langlinks().then(
+              langlinks => {
+                sets.forEach((set) => {
+                  let setEntry = langlinks
+                    .filter(langlink => langlink.lang.startsWith(set))
+                    .sort(langlink => langlink.lang)[0]
+        
+                  if (!setEntry) {
+                    console.log(`No entry found for ${card.person[search]} in ${set}`)
+                    return // next language
+                  }
+        
+                  card.person[set] = setEntry.title
+                  
+                  if (!card.wikipedia) {
+                    card.wikipedia = {}
+                  }
+                  card.wikipedia[set] = setEntry.url
+                })
+              },
+              err => { throw err }
+            ),
+
+            // Search image in the primary language
+            // If there is no image, it may take a very very shitty image (like an icon)
+            // TODO(horo): filter these images out and fallback to other languages
+            // TODO(horo): may need to switch to English https://github.com/dijs/wiki/issues/156
+            page.mainImage().then(
+              mainImage => {
+                card.imageUrl = mainImage
+              },
+              err => { throw err }
+            )
+          ])
       },
       err => { throw err })
     .then(
-      langlinks => {
-        sets.forEach((set) => {
-          let setEntry = langlinks
-            .filter(langlink => langlink.lang.startsWith(set))
-            .sort(langlink => langlink.lang)[0]
-
-          if (!setEntry) {
-            console.log(`No entry found for ${card.person[search]} in ${set}`)
-            return
-          }
-
-          card.person[set] = setEntry.title
-          
-          if (!card.wikipedia) {
-            card.wikipedia = {}
-          }
-          card.wikipedia[set] = setEntry.url
-        })
-        res.json(card)
-      },
+      values => res.json(card),
       err => handleErrorAndReturnNext(500, err.message, res))
 })
 
