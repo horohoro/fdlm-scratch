@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class BackendService {
 
-  endpoint: string = 'http://localhost:8000/api';
+  endpoint: string = `http://${window.location.hostname}:8000/api`;
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(
