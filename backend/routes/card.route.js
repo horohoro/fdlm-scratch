@@ -376,7 +376,7 @@ cardRoute.route('/PreloadCard').post((req, res, next) => {
         card.person[search] = page.title
 
         return Promise.all
-          ([ 
+          ([
             page.langlinks().then(
               langlinks => {
                 sets.forEach((set) => {
@@ -409,7 +409,7 @@ cardRoute.route('/PreloadCard').post((req, res, next) => {
                 card.imageUrl = mainImage
               },
               err => { throw err }
-            )
+            ).catch(() => {return}) // https://github.com/dijs/wiki/issues/157
           ])
       },
       err => { throw err })

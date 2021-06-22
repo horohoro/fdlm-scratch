@@ -20,7 +20,8 @@
     "en": "https://en.wikipedia.org/wiki/Sigmund_Freud",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%BC%E3%82%AF%E3%83%A0%E3%83%B3%E3%83%88%E3%83%BB%E3%83%95%E3%83%AD%E3%82%A4%E3%83%88"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg"
 },{
   "_id": {
     "$oid": "60cf5fe80607fd44d879472e"
@@ -43,7 +44,8 @@
     "en": "https://en.wikipedia.org/wiki/Marie_Curie",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AA%E3%83%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Marie_Curie_c1920.png"
 },{
   "_id": {
     "$oid": "60cf60350607fd44d8794733"
@@ -66,7 +68,8 @@
     "en": "https://en.wikipedia.org/wiki/Friedrich_Nietzsche",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%BC%E3%83%89%E3%83%AA%E3%83%92%E3%83%BB%E3%83%8B%E3%83%BC%E3%83%81%E3%82%A7"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Portrait_of_Friedrich_Nietzsche.jpg"
 },{
   "_id": {
     "$oid": "60cf60490607fd44d8794737"
@@ -89,7 +92,8 @@
     "en": "https://en.wikipedia.org/wiki/Margaret_Thatcher",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%82%AC%E3%83%AC%E3%83%83%E3%83%88%E3%83%BB%E3%82%B5%E3%83%83%E3%83%81%E3%83%A3%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Margaret_Thatcher_stock_portrait_%28cropped%29.jpg"
 },{
   "_id": {
     "$oid": "60cf60600607fd44d879473c"
@@ -112,7 +116,8 @@
     "en": "https://en.wikipedia.org/wiki/Karl_Marx",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%9E%E3%83%AB%E3%82%AF%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Karl_Marx_001.jpg"
 },{
   "_id": {
     "$oid": "60cf606e0607fd44d8794740"
@@ -135,7 +140,8 @@
     "en": "https://en.wikipedia.org/wiki/Michael_Jackson",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%A4%E3%82%B1%E3%83%AB%E3%83%BB%E3%82%B8%E3%83%A3%E3%82%AF%E3%82%BD%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Michael_Jackson_in_1988.jpg"
 },{
   "_id": {
     "$oid": "60cf60770607fd44d8794744"
@@ -158,30 +164,8 @@
     "en": "https://en.wikipedia.org/wiki/Mao_Zedong",
     "ja": "https://ja.wikipedia.org/wiki/%E6%AF%9B%E6%B2%A2%E6%9D%B1"
   },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "60cf60840607fd44d8794748"
-  },
-  "inputLang": "fr",
-  "person": {
-    "_id": {
-      "$oid": "60cf60840607fd44d8794749"
-    },
-    "fr": "Captain America: First Avenger",
-    "en": "Captain America: The First Avenger",
-    "ja": "キャプテン・アメリカ/ザ・ファースト・アベンジャー"
-  },
-  "difficulty": "medium",
-  "wikipedia": {
-    "_id": {
-      "$oid": "60cf60840607fd44d879474a"
-    },
-    "fr": "https://fr.wikipedia.org/wiki/Captain_America:_First_Avenger",
-    "en": "https://en.wikipedia.org/wiki/Captain_America:_The_First_Avenger",
-    "ja": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%A3%E3%83%97%E3%83%86%E3%83%B3%E3%83%BB%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB/%E3%82%B6%E3%83%BB%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BB%E3%82%A2%E3%83%99%E3%83%B3%E3%82%B8%E3%83%A3%E3%83%BC"
-  },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Mao_Zedong_portrait.jpg"
 },{
   "_id": {
     "$oid": "60cf60910607fd44d879474c"
@@ -204,7 +188,8 @@
     "en": "https://en.wikipedia.org/wiki/Hamlet",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%A0%E3%83%AC%E3%83%83%E3%83%88"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Hamlet_und_Horatio_auf_dem_Friedhof_%28Eug%C3%A8ne_Ferdinand_Victor_Delacroix%29.jpg"
 },{
   "_id": {
     "$oid": "60cf60a30607fd44d8794750"
@@ -227,7 +212,8 @@
     "en": "https://en.wikipedia.org/wiki/Charles_de_Gaulle",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A3%E3%83%AB%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E3%82%B4%E3%83%BC%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/De_Gaulle_1961_%28cropped%29.jpg"
 },{
   "_id": {
     "$oid": "60cf60aa0607fd44d8794754"
@@ -250,7 +236,8 @@
     "en": "https://en.wikipedia.org/wiki/Joker_(character)",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%AB%E3%83%BC_(%E3%83%90%E3%83%83%E3%83%88%E3%83%9E%E3%83%B3)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/98/Joker_%28DC_Comics_character%29.jpg"
 },{
   "_id": {
     "$oid": "60cf773c4ffcc40ab01803b5"
@@ -275,7 +262,8 @@
   },
   "__v": 0,
   "player": 4,
-  "selected": true
+  "selected": true,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Justus_Sustermans_-_Portrait_of_Galileo_Galilei%2C_1636.jpg"
 },{
   "_id": {
     "$oid": "60cf788e8cc0e64588150489"
@@ -299,7 +287,7 @@
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%82%AD%E3%83%A1%E3%83%87%E3%82%B9"
   },
   "__v": 0,
-  "selected": true
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Archimede_bain.jpg"
 },{
   "_id": {
     "$oid": "60cf78af8cc0e6458815048d"
@@ -322,7 +310,8 @@
     "en": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%83%BB%E3%83%AB%E3%83%BC%E3%82%B5%E3%83%BC%E3%83%BB%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%B8%E3%83%A5%E3%83%8B%E3%82%A2"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Martin_Luther_King%2C_Jr..jpg"
 },{
   "_id": {
     "$oid": "60cf78c08cc0e64588150491"
@@ -345,7 +334,8 @@
     "en": "https://en.wikipedia.org/wiki/Christopher_Columbus",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%83%BC%E3%83%BB%E3%82%B3%E3%83%AD%E3%83%B3%E3%83%96%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Ridolfo_del_Ghirlandaio_-_Ritratto_di_Cristoforo_Colombo_%281520%29.jpg"
 },{
   "_id": {
     "$oid": "60cf78ca8cc0e64588150495"
@@ -369,7 +359,7 @@
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%98%E3%83%BC%E3%83%A9%E3%82%AF%E3%83%AC%E3%83%BC%E3%82%B9"
   },
   "__v": 0,
-  "selected": true
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Herakles_Niobid_krater_Louvre_G341.jpg"
 },{
   "_id": {
     "$oid": "60cf78e18cc0e64588150499"
@@ -392,7 +382,8 @@
     "en": "https://en.wikipedia.org/wiki/Professor_Moriarty",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%82%A7%E3%83%BC%E3%83%A0%E3%82%BA%E3%83%BB%E3%83%A2%E3%83%AA%E3%82%A2%E3%83%BC%E3%83%86%E3%82%A3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/The_Adventure_of_the_Final_Problem_03.jpg"
 },{
   "_id": {
     "$oid": "60cf78ee8cc0e6458815049d"
@@ -415,7 +406,8 @@
     "en": "https://en.wikipedia.org/wiki/Al_Capone",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%BB%E3%82%AB%E3%83%9D%E3%83%8D"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Acaponeh.jpg"
 },{
   "_id": {
     "$oid": "60cf78f98cc0e645881504a1"
@@ -438,7 +430,8 @@
     "en": "https://en.wikipedia.org/wiki/Marie_Antoinette",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AA%E3%83%BC%E3%83%BB%E3%82%A2%E3%83%B3%E3%83%88%E3%83%AF%E3%83%8D%E3%83%83%E3%83%88"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Marie_Antoinette_Adult4.jpg"
 },{
   "_id": {
     "$oid": "60cf79178cc0e645881504a5"
@@ -461,7 +454,8 @@
     "en": "https://en.wikipedia.org/wiki/Goku",
     "ja": "https://ja.wikipedia.org/wiki/%E5%AD%AB%E6%82%9F%E7%A9%BA_(%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/CPBR2015_-_02_%28cropped%29.jpg"
 },{
   "_id": {
     "$oid": "60cf79398cc0e645881504a9"
@@ -484,7 +478,8 @@
     "en": "https://en.wikipedia.org/wiki/Auguste_Rodin",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%AE%E3%83%A5%E3%82%B9%E3%83%88%E3%83%BB%E3%83%AD%E3%83%80%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Rodin-cropped.png"
 },{
   "_id": {
     "$oid": "60cf79778cc0e645881504ad"
@@ -507,30 +502,8 @@
     "en": "https://en.wikipedia.org/wiki/Julius_Caesar",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AC%E3%82%A4%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%A6%E3%83%AA%E3%82%A6%E3%82%B9%E3%83%BB%E3%82%AB%E3%82%A8%E3%82%B5%E3%83%AB"
   },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "60cf79878cc0e645881504b1"
-  },
-  "inputLang": "fr",
-  "person": {
-    "_id": {
-      "$oid": "60cf79878cc0e645881504b2"
-    },
-    "fr": "Roméo et Juliette",
-    "en": "Romeo and Juliet",
-    "ja": "ロミオとジュリエット"
-  },
-  "difficulty": "easy",
-  "wikipedia": {
-    "_id": {
-      "$oid": "60cf79878cc0e645881504b3"
-    },
-    "fr": "https://fr.wikipedia.org/wiki/Rom%C3%A9o_et_Juliette",
-    "en": "https://en.wikipedia.org/wiki/Romeo_and_Juliet",
-    "ja": "https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%9F%E3%82%AA%E3%81%A8%E3%82%B8%E3%83%A5%E3%83%AA%E3%82%A8%E3%83%83%E3%83%88"
-  },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg"
 },{
   "_id": {
     "$oid": "60cf79a18cc0e645881504b5"
@@ -553,7 +526,8 @@
     "en": "https://en.wikipedia.org/wiki/Mahatma_Gandhi",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%8F%E3%83%88%E3%83%9E%E3%83%BB%E3%82%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg"
 },{
   "_id": {
     "$oid": "60cf79d08cc0e645881504b9"
@@ -576,7 +550,8 @@
     "en": "https://en.wikipedia.org/wiki/List_of_The_Lion_King_characters#Mufasa",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%A0%E3%83%95%E3%82%A1%E3%82%B5"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/D_letter_upon_three_circles.svg"
 },{
   "_id": {
     "$oid": "60cf79e28cc0e645881504bd"
@@ -599,7 +574,8 @@
     "en": "https://en.wikipedia.org/wiki/Vincent_van_Gogh",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%B3%E3%82%BB%E3%83%B3%E3%83%88%E3%83%BB%E3%83%95%E3%82%A1%E3%83%B3%E3%83%BB%E3%82%B4%E3%83%83%E3%83%9B"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg"
 },{
   "_id": {
     "$oid": "60cf79ef8cc0e645881504c1"
@@ -622,7 +598,8 @@
     "en": "https://en.wikipedia.org/wiki/Captain_Hook",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%83%E3%82%AF%E8%88%B9%E9%95%B7"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Captain_Hook.PNG"
 },{
   "_id": {
     "$oid": "60cf79fc8cc0e645881504c5"
@@ -645,7 +622,8 @@
     "en": "https://en.wikipedia.org/wiki/Isaac_Newton",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%A4%E3%82%B6%E3%83%83%E3%82%AF%E3%83%BB%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg"
 },{
   "_id": {
     "$oid": "60cf7a068cc0e645881504c9"
@@ -668,7 +646,8 @@
     "en": "https://en.wikipedia.org/wiki/Diana,_Princess_of_Wales",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%80%E3%82%A4%E3%82%A2%E3%83%8A_(%E3%83%97%E3%83%AA%E3%83%B3%E3%82%BB%E3%82%B9%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%AB%E3%82%BA)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Diana%2C_Princess_of_Wales_1997_%282%29.jpg"
 },{
   "_id": {
     "$oid": "60cf7a178cc0e645881504cd"
@@ -691,7 +670,8 @@
     "en": "https://en.wikipedia.org/wiki/Mother_Teresa",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B6%E3%83%BC%E3%83%BB%E3%83%86%E3%83%AC%E3%82%B5"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Mutter_Teresa_von_Kalkutta.jpg"
 },{
   "_id": {
     "$oid": "60cf7a2b8cc0e645881504d1"
@@ -714,7 +694,8 @@
     "en": "https://en.wikipedia.org/wiki/Blackbeard",
     "ja": "https://ja.wikipedia.org/wiki/%E9%BB%92%E9%AB%AD"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Teach_alias_Blackbeard%2C_colored.jpg"
 },{
   "_id": {
     "$oid": "60cf7a398cc0e645881504d5"
@@ -737,7 +718,8 @@
     "en": "https://en.wikipedia.org/wiki/Leonardo_da_Vinci",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%AC%E3%82%AA%E3%83%8A%E3%83%AB%E3%83%89%E3%83%BB%E3%83%80%E3%83%BB%E3%83%B4%E3%82%A3%E3%83%B3%E3%83%81"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Leonardo_self.jpg"
 },{
   "_id": {
     "$oid": "60cf7a478cc0e645881504d9"
@@ -747,9 +729,9 @@
     "_id": {
       "$oid": "60cf7a478cc0e645881504da"
     },
-    "fr": "Titanic (film, 1997)",
-    "en": "Titanic (1997 film)",
-    "ja": "タイタニック (1997年の映画)"
+    "fr": "Jack Dawson",
+    "en": "Jack Dawson",
+    "ja": "ジャック・ドーソン"
   },
   "difficulty": "medium",
   "wikipedia": {
@@ -760,7 +742,8 @@
     "en": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E3%82%BF%E3%83%8B%E3%83%83%E3%82%AF_(1997%E5%B9%B4%E3%81%AE%E6%98%A0%E7%94%BB)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/19/Titanic_%28Official_Film_Poster%29.png"
 },{
   "_id": {
     "$oid": "60cf7a638cc0e645881504dd"
@@ -783,7 +766,8 @@
     "en": "https://en.wikipedia.org/wiki/Bob_Marley",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%96%E3%83%BB%E3%83%9E%E3%83%BC%E3%83%AA%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Blue_pencil.svg"
 },{
   "_id": {
     "$oid": "60cf7afe8cc0e645881504e1"
@@ -806,7 +790,8 @@
     "en": "https://en.wikipedia.org/wiki/Sissi_%E2%80%93_The_Young_Empress",
     "ja": "https://ja.wikipedia.org/wiki/%E8%8B%A5%E3%81%8D%E7%9A%87%E5%90%8E%E3%82%B7%E3%82%B7%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/60/Sissi_-_The_young_Empress.jpg"
 },{
   "_id": {
     "$oid": "60cf7b0d8cc0e645881504e5"
@@ -829,7 +814,8 @@
     "en": "https://en.wikipedia.org/wiki/Marilyn_Monroe",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%AA%E3%83%AA%E3%83%B3%E3%83%BB%E3%83%A2%E3%83%B3%E3%83%AD%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Marilyn_Monroe%2C_Photoplay_1953.jpg"
 },{
   "_id": {
     "$oid": "60cf7b178cc0e645881504e9"
@@ -852,7 +838,8 @@
     "en": "https://en.wikipedia.org/wiki/Pythagoras",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%94%E3%82%BF%E3%82%B4%E3%83%A9%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Kapitolinischer_Pythagoras_adjusted.jpg"
 },{
   "_id": {
     "$oid": "60cf7b218cc0e645881504ed"
@@ -875,7 +862,8 @@
     "en": "https://en.wikipedia.org/wiki/Plato",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%A9%E3%83%88%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Plato_Pio-Clemetino_Inv305.jpg"
 },{
   "_id": {
     "$oid": "60cf7b2a8cc0e645881504f1"
@@ -898,7 +886,8 @@
     "en": "https://en.wikipedia.org/wiki/Lord_Voldemort",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A9%E3%83%AB%E3%83%87%E3%83%A2%E3%83%BC%E3%83%88"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Lord_Voldemort.jpg"
 },{
   "_id": {
     "$oid": "60cf7b3c8cc0e645881504f5"
@@ -921,7 +910,8 @@
     "en": "https://en.wikipedia.org/wiki/Pocahontas",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9D%E3%82%AB%E3%83%9B%E3%83%B3%E3%82%BF%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Pocahontas_by_Simon_van_de_Passe_%281616%29.png"
 },{
   "_id": {
     "$oid": "60cf7b478cc0e645881504f9"
@@ -944,7 +934,8 @@
     "en": "https://en.wikipedia.org/wiki/Albus_Dumbledore",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%90%E3%82%B9%E3%83%BB%E3%83%80%E3%83%B3%E3%83%96%E3%83%AB%E3%83%89%E3%82%A2"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Albus_Dumbledore.jpg"
 },{
   "_id": {
     "$oid": "60cf7b518cc0e645881504fd"
@@ -967,7 +958,8 @@
     "en": "https://en.wikipedia.org/wiki/King_Arthur",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%BC%E3%82%B5%E3%83%BC%E7%8E%8B"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Hommage2.jpg"
 },{
   "_id": {
     "$oid": "60cf7b5d8cc0e64588150501"
@@ -990,7 +982,8 @@
     "en": "https://en.wikipedia.org/wiki/Charles_de_Batz_de_Castelmore_d%27Artagnan",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%AB%E3%82%BF%E3%83%8B%E3%83%A3%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/D%E2%80%99Artagnan_-_1704.png"
 },{
   "_id": {
     "$oid": "60cf7b738cc0e64588150505"
@@ -1013,7 +1006,8 @@
     "en": "https://en.wikipedia.org/wiki/Anakin_Skywalker",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%8A%E3%82%AD%E3%83%B3%E3%83%BB%E3%82%B9%E3%82%AB%E3%82%A4%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AB%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Bon_article.svg"
 },{
   "_id": {
     "$oid": "60cf7b818cc0e64588150509"
@@ -1036,30 +1030,8 @@
     "en": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
     "ja": "https://ja.wikipedia.org/wiki/J%E3%83%BBR%E3%83%BBR%E3%83%BB%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AD%E3%83%B3"
   },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "60cf7bb18cc0e6458815050d"
-  },
-  "inputLang": "fr",
-  "person": {
-    "_id": {
-      "$oid": "60cf7bb18cc0e6458815050e"
-    },
-    "fr": "L'Étrange Noël de monsieur Jack",
-    "en": "The Nightmare Before Christmas",
-    "ja": "ナイトメアー・ビフォア・クリスマス"
-  },
-  "difficulty": "medium",
-  "wikipedia": {
-    "_id": {
-      "$oid": "60cf7bb18cc0e6458815050f"
-    },
-    "fr": "https://fr.wikipedia.org/wiki/L%27%C3%89trange_No%C3%ABl_de_monsieur_Jack",
-    "en": "https://en.wikipedia.org/wiki/The_Nightmare_Before_Christmas",
-    "ja": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%82%A4%E3%83%88%E3%83%A1%E3%82%A2%E3%83%BC%E3%83%BB%E3%83%93%E3%83%95%E3%82%A9%E3%82%A2%E3%83%BB%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9"
-  },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Tolkien_1916.jpg"
 },{
   "_id": {
     "$oid": "60cf7bd98cc0e64588150511"
@@ -1082,7 +1054,8 @@
     "en": "https://en.wikipedia.org/wiki/Nelson_Mandela",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%8D%E3%83%AB%E3%82%BD%E3%83%B3%E3%83%BB%E3%83%9E%E3%83%B3%E3%83%87%E3%83%A9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Nelson_Mandela-2008_%28edit%29.jpg"
 },{
   "_id": {
     "$oid": "60cf7be28cc0e64588150515"
@@ -1105,7 +1078,8 @@
     "en": "https://en.wikipedia.org/wiki/Bruce_Lee",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AB%E3%83%BC%E3%82%B9%E3%83%BB%E3%83%AA%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Bruce_Lee_1973.jpg"
 },{
   "_id": {
     "$oid": "60cf7bf58cc0e64588150519"
@@ -1128,7 +1102,8 @@
     "en": "https://en.wikipedia.org/wiki/Pablo_Picasso",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%96%E3%83%AD%E3%83%BB%E3%83%94%E3%82%AB%E3%82%BD"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Pablo_picasso_1.jpg"
 },{
   "_id": {
     "$oid": "60cf7c258cc0e6458815051d"
@@ -1152,8 +1127,7 @@
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%87%E3%82%A3%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%9B%E3%83%AB"
   },
   "__v": 0,
-  "player": 1,
-  "selected": true
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Andy_Warhol_1977.jpg"
 },{
   "_id": {
     "$oid": "60cf7c2d8cc0e64588150521"
@@ -1176,7 +1150,8 @@
     "en": "https://en.wikipedia.org/wiki/Gollum",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B4%E3%82%AF%E3%83%AA"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Gollum_s_journey_commences_by_Frederic_Bennett.jpg"
 },{
   "_id": {
     "$oid": "60cf7c368cc0e64588150525"
@@ -1199,7 +1174,8 @@
     "en": "https://en.wikipedia.org/wiki/Victor_Hugo",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A3%E3%82%AF%E3%83%88%E3%83%AB%E3%83%BB%E3%83%A6%E3%83%BC%E3%82%B4%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Victor_Hugo_001.jpg"
 },{
   "_id": {
     "$oid": "60cf7c468cc0e64588150529"
@@ -1222,7 +1198,8 @@
     "en": "https://en.wikipedia.org/wiki/Pablo_Escobar",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%96%E3%83%AD%E3%83%BB%E3%82%A8%E3%82%B9%E3%82%B3%E3%83%90%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Pablo_Escobar_Mug.jpg"
 },{
   "_id": {
     "$oid": "60cf7c568cc0e6458815052d"
@@ -1245,30 +1222,8 @@
     "en": "https://en.wikipedia.org/wiki/Neil_Armstrong",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%8B%E3%83%BC%E3%83%AB%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%A0%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B3%E3%82%B0"
   },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "60cf7c788cc0e64588150531"
-  },
-  "inputLang": "fr",
-  "person": {
-    "_id": {
-      "$oid": "60cf7c788cc0e64588150532"
-    },
-    "fr": "Dracula",
-    "en": "Dracula",
-    "ja": "吸血鬼ドラキュラ (小説)"
-  },
-  "difficulty": "easy",
-  "wikipedia": {
-    "_id": {
-      "$oid": "60cf7c788cc0e64588150533"
-    },
-    "fr": "https://fr.wikipedia.org/wiki/Dracula",
-    "en": "https://en.wikipedia.org/wiki/Dracula",
-    "ja": "https://ja.wikipedia.org/wiki/%E5%90%B8%E8%A1%80%E9%AC%BC%E3%83%89%E3%83%A9%E3%82%AD%E3%83%A5%E3%83%A9_(%E5%B0%8F%E8%AA%AC)"
-  },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Neil_Armstrong_pose.jpg"
 },{
   "_id": {
     "$oid": "60cf7c8d8cc0e64588150535"
@@ -1293,7 +1248,8 @@
   },
   "__v": 0,
   "player": 8,
-  "selected": true
+  "selected": true,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Shakespeare.jpg"
 },{
   "_id": {
     "$oid": "60d00d169a1c0148047eb9a2"
@@ -1316,7 +1272,8 @@
     "en": "https://en.wikipedia.org/wiki/Coco_Chanel",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B3%E3%82%B3%E3%83%BB%E3%82%B7%E3%83%A3%E3%83%8D%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/30/Coco_Chanel%2C_1920.jpg"
 },{
   "_id": {
     "$oid": "60d00d739a1c0148047eb9a6"
@@ -1339,7 +1296,8 @@
     "en": "https://en.wikipedia.org/wiki/Superman",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%83%9E%E3%83%B3_(%E6%9E%B6%E7%A9%BA%E3%81%AE%E4%BA%BA%E7%89%A9)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Superman_S_symbol.svg"
 },{
   "_id": {
     "$oid": "60d00d849a1c0148047eb9aa"
@@ -1362,7 +1320,10 @@
     "en": "https://en.wikipedia.org/wiki/Napoleon",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%9D%E3%83%AC%E3%82%AA%E3%83%B3%E3%83%BB%E3%83%9C%E3%83%8A%E3%83%91%E3%83%AB%E3%83%88"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Francois_Gerard_-_Napoleon_Ier_en_costume_du_Sacre.jpg",
+  "player": 1,
+  "selected": true
 },{
   "_id": {
     "$oid": "60d00dad9a1c0148047eb9ae"
@@ -1385,7 +1346,8 @@
     "en": "https://en.wikipedia.org/wiki/Yoda",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%A8%E3%83%BC%E3%83%80"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Retrato_del_Maestro_Yoda.jpg"
 },{
   "_id": {
     "$oid": "60d00db79a1c0148047eb9b2"
@@ -1408,7 +1370,8 @@
     "en": "https://en.wikipedia.org/wiki/Percival",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%82%B7%E3%83%B4%E3%82%A1%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Rogelio_de_Egusquiza_-_Parsifal.jpg"
 },{
   "_id": {
     "$oid": "60d00dc09a1c0148047eb9b6"
@@ -1431,7 +1394,8 @@
     "en": "https://en.wikipedia.org/wiki/Attila",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%83%E3%83%86%E3%82%A3%E3%83%A9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Eugene_Ferdinand_Victor_Delacroix_Attila_fragment.jpg"
 },{
   "_id": {
     "$oid": "60d00dcc9a1c0148047eb9ba"
@@ -1454,7 +1418,8 @@
     "en": "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A9%E3%83%AB%E3%83%95%E3%82%AC%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%A2%E3%83%9E%E3%83%87%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%A2%E3%83%BC%E3%83%84%E3%82%A1%E3%83%AB%E3%83%88"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Wolfgang-amadeus-mozart_1.jpg"
 },{
   "_id": {
     "$oid": "60d00dd59a1c0148047eb9be"
@@ -1477,7 +1442,8 @@
     "en": "https://en.wikipedia.org/wiki/Achilles",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AD%E3%83%AC%E3%82%A6%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/Achilles_and_Penthesilea.jpg"
 },{
   "_id": {
     "$oid": "60d00de69a1c0148047eb9c2"
@@ -1500,7 +1466,8 @@
     "en": "https://en.wikipedia.org/wiki/The_Little_Mermaid",
     "ja": "https://ja.wikipedia.org/wiki/%E4%BA%BA%E9%AD%9A%E5%A7%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Bertall_ill_La_Petite_Sir%C3%A8ne2.png"
 },{
   "_id": {
     "$oid": "60d00dfc9a1c0148047eb9c6"
@@ -1523,7 +1490,8 @@
     "en": "https://en.wikipedia.org/wiki/Spartacus",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%91%E3%83%AB%E3%82%BF%E3%82%AF%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Tod_des_Spartacus_by_Hermann_Vogel.jpg"
 },{
   "_id": {
     "$oid": "60d00e779a1c0148047eb9ca"
@@ -1546,7 +1514,8 @@
     "en": "https://en.wikipedia.org/wiki/Steve_Jobs",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC%E3%83%96%E3%83%BB%E3%82%B8%E3%83%A7%E3%83%96%E3%82%BA"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg"
 },{
   "_id": {
     "$oid": "60d00e8a9a1c0148047eb9ce"
@@ -1569,7 +1538,8 @@
     "en": "https://en.wikipedia.org/wiki/Oda_Nobunaga",
     "ja": "https://ja.wikipedia.org/wiki/%E7%B9%94%E7%94%B0%E4%BF%A1%E9%95%B7"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Odanobunaga.jpg"
 },{
   "_id": {
     "$oid": "60d00eba9a1c0148047eb9d2"
@@ -1592,7 +1562,8 @@
     "en": "https://en.wikipedia.org/wiki/Case_Closed",
     "ja": "https://ja.wikipedia.org/wiki/%E5%90%8D%E6%8E%A2%E5%81%B5%E3%82%B3%E3%83%8A%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3f/Case_Closed_Volume_36.png"
 },{
   "_id": {
     "$oid": "60d00eca9a1c0148047eb9d6"
@@ -1615,7 +1586,8 @@
     "en": "https://en.wikipedia.org/wiki/The_Little_Prince",
     "ja": "https://ja.wikipedia.org/wiki/%E6%98%9F%E3%81%AE%E7%8E%8B%E5%AD%90%E3%81%95%E3%81%BE"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/Le_petit_prince.png"
 },{
   "_id": {
     "$oid": "60d00ed49a1c0148047eb9da"
@@ -1638,7 +1610,8 @@
     "en": "https://en.wikipedia.org/wiki/King_Kong",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%B3%E3%82%B0_(%E6%9E%B6%E7%A9%BA%E3%81%AE%E6%80%AA%E7%8D%A3)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/King_Kong_1933_French_poster.jpg"
 },{
   "_id": {
     "$oid": "60d00edf9a1c0148047eb9de"
@@ -1661,7 +1634,8 @@
     "en": "https://en.wikipedia.org/wiki/Charlie_Chaplin",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AB%E3%82%BA%E3%83%BB%E3%83%81%E3%83%A3%E3%83%83%E3%83%97%E3%83%AA%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Charlie_Chaplin_portrait.jpg"
 },{
   "_id": {
     "$oid": "60d00ef49a1c0148047eb9e2"
@@ -1684,7 +1658,8 @@
     "en": "https://en.wikipedia.org/wiki/Ramesses_II",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%A0%E3%82%BB%E3%82%B92%E4%B8%96"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Le_mus%C3%A9e_%C3%A9gyptien_%28Turin%29_%282866334984%29.jpg"
 },{
   "_id": {
     "$oid": "60d00f019a1c0148047eb9e6"
@@ -1707,7 +1682,8 @@
     "en": "https://en.wikipedia.org/wiki/Don_Quixote",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%B3%E3%83%BB%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Miguel_de_Cervantes_%281605%29_El_ingenioso_hidalgo_Don_Quixote_de_la_Mancha.png"
 },{
   "_id": {
     "$oid": "60d00f3b9a1c0148047eb9ea"
@@ -1730,7 +1706,8 @@
     "en": "https://en.wikipedia.org/wiki/Pikachu",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pokemon_%2831599837283%29.jpg"
 },{
   "_id": {
     "$oid": "60d00f469a1c0148047eb9ee"
@@ -1753,7 +1730,8 @@
     "en": "https://en.wikipedia.org/wiki/Moli%C3%A8re",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%AA%E3%82%A8%E3%83%BC%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Moli%C3%A8re_-_Nicolas_Mignard_%281658%29.jpg"
 },{
   "_id": {
     "$oid": "60d00f619a1c0148047eb9f2"
@@ -1776,7 +1754,8 @@
     "en": "https://en.wikipedia.org/wiki/Joan_of_Arc",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%8C%E3%83%BB%E3%83%80%E3%83%AB%E3%82%AF"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Contemporaine_afb_jeanne_d_arc.png"
 },{
   "_id": {
     "$oid": "60d00f6b9a1c0148047eb9f6"
@@ -1799,7 +1778,8 @@
     "en": "https://en.wikipedia.org/wiki/Godzilla",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B4%E3%82%B8%E3%83%A9_(%E6%9E%B6%E7%A9%BA%E3%81%AE%E6%80%AA%E7%8D%A3)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Gojira_1954_Japanese_poster.jpg"
 },{
   "_id": {
     "$oid": "60d00fcb9a1c0148047eb9fa"
@@ -1822,7 +1802,8 @@
     "en": "https://en.wikipedia.org/wiki/Louis_XIV",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%A414%E4%B8%96_(%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E7%8E%8B)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Louis_XIV_of_France.jpg"
 },{
   "_id": {
     "$oid": "60d00fe99a1c0148047eb9fe"
@@ -1845,7 +1826,8 @@
     "en": "https://en.wikipedia.org/wiki/Gustave_Eiffel",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AE%E3%83%A5%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%B4%E3%83%BB%E3%82%A8%E3%83%83%E3%83%95%E3%82%A7%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Gustave_Eiffel.jpg"
 },{
   "_id": {
     "$oid": "60d00fef9a1c0148047eba02"
@@ -1868,7 +1850,8 @@
     "en": "https://en.wikipedia.org/wiki/Judas_Iscariot",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%82%B9%E3%82%AB%E3%83%AA%E3%82%AA%E3%83%86%E3%81%AE%E3%83%A6%E3%83%80"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Peter_Paul_Rubens_-_Last_Supper_-_WGA20255.jpg"
 },{
   "_id": {
     "$oid": "60d00fff9a1c0148047eba06"
@@ -1891,7 +1874,8 @@
     "en": "https://en.wikipedia.org/wiki/Albert_Einstein",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%99%E3%83%AB%E3%83%88%E3%83%BB%E3%82%A2%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%A5%E3%82%BF%E3%82%A4%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Albert_Einstein_1947.jpg"
 },{
   "_id": {
     "$oid": "60d010099a1c0148047eba0a"
@@ -1914,7 +1898,8 @@
     "en": "https://en.wikipedia.org/wiki/Bluebeard",
     "ja": "https://ja.wikipedia.org/wiki/%E9%9D%92%E3%81%B2%E3%81%92"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Barbebleue.jpg"
 },{
   "_id": {
     "$oid": "60d010b59a1c0148047eba0e"
@@ -1937,7 +1922,8 @@
     "en": "Terminator (character)",
     "ja": "T-800"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/TERMINATOR.jpg"
 },{
   "_id": {
     "$oid": "60d010c79a1c0148047eba12"
@@ -1960,7 +1946,8 @@
     "en": "https://en.wikipedia.org/wiki/Odysseus",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%87%E3%83%A5%E3%83%83%E3%82%BB%E3%82%A6%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Head_Odysseus_MAR_Sperlonga.jpg"
 },{
   "_id": {
     "$oid": "60d010e09a1c0148047eba16"
@@ -1983,7 +1970,8 @@
     "en": "https://en.wikipedia.org/wiki/Louis_Pasteur",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%A4%E3%83%BB%E3%83%91%E3%82%B9%E3%83%84%E3%83%BC%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Louis_Pasteur%2C_foto_av_Paul_Nadar.jpg"
 },{
   "_id": {
     "$oid": "60d011149a1c0148047eba1a"
@@ -2006,7 +1994,8 @@
     "en": "Ash Ketchum",
     "ja": "サトシ (アニメポケットモンスター)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e4/Ash_Ketchum_Journeys.png"
 },{
   "_id": {
     "$oid": "60d011249a1c0148047eba1e"
@@ -2029,7 +2018,8 @@
     "en": "https://en.wikipedia.org/wiki/Muhammad_Ali",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8F%E3%83%A1%E3%83%89%E3%83%BB%E3%82%A2%E3%83%AA"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Ali.jpg"
 },{
   "_id": {
     "$oid": "60d0112f9a1c0148047eba22"
@@ -2052,7 +2042,8 @@
     "en": "https://en.wikipedia.org/wiki/Jean_Moulin",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%BB%E3%83%A0%E3%83%BC%E3%83%A9%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Moulin_Harcourt_1937.jpg"
 },{
   "_id": {
     "$oid": "60d0114d9a1c0148047eba26"
@@ -2075,7 +2066,8 @@
     "en": "Lucy (Australopithecus)",
     "ja": "ルーシー (アウストラロピテクス)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Reconstruction_of_the_fossil_skeleton_of_%22Lucy%22_the_Australopithecus_afarensis.jpg"
 },{
   "_id": {
     "$oid": "60d011589a1c0148047eba2a"
@@ -2098,7 +2090,8 @@
     "en": "https://en.wikipedia.org/wiki/%C3%89dith_Piaf",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%87%E3%82%A3%E3%83%83%E3%83%88%E3%83%BB%E3%83%94%E3%82%A2%E3%83%95"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/%C3%89dith_Piaf_914-6440.jpg"
 },{
   "_id": {
     "$oid": "60d0116e9a1c0148047eba2e"
@@ -2121,7 +2114,8 @@
     "en": "https://en.wikipedia.org/wiki/Agatha_Christie",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AC%E3%82%B5%E3%83%BB%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%86%E3%82%A3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Agatha_Christie.png"
 },{
   "_id": {
     "$oid": "60d0117d9a1c0148047eba32"
@@ -2144,7 +2138,8 @@
     "en": "https://en.wikipedia.org/wiki/Che_Guevara",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%BB%E3%82%B2%E3%83%90%E3%83%A9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/CheHigh.jpg"
 },{
   "_id": {
     "$oid": "60d011869a1c0148047eba36"
@@ -2167,7 +2162,8 @@
     "en": "https://en.wikipedia.org/wiki/Louis_de_Fun%C3%A8s",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%A4%E3%83%BB%E3%83%89%E3%83%BB%E3%83%95%E3%83%A5%E3%83%8D%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Louis_de_Fun%C3%A8s_%E2%80%94_L%27Homme_orchestre_%281970%29_%28recadr%C3%A9%29.jpg"
 },{
   "_id": {
     "$oid": "60d0118d9a1c0148047eba3a"
@@ -2190,7 +2186,8 @@
     "en": "https://en.wikipedia.org/wiki/Croesus",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AD%E3%82%A4%E3%82%BD%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Claude_Vignon_-_Croesus_and_Solon.jpg"
 },{
   "_id": {
     "$oid": "60d011989a1c0148047eba3e"
@@ -2213,7 +2210,8 @@
     "en": "https://en.wikipedia.org/wiki/Arthur_Rimbaud",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%A9%E3%83%B3%E3%83%9C%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Rimbaud.PNG"
 },{
   "_id": {
     "$oid": "60d011a19a1c0148047eba42"
@@ -2236,7 +2234,8 @@
     "en": "https://en.wikipedia.org/wiki/Casper_the_Friendly_Ghost",
     "ja": "https://ja.wikipedia.org/wiki/%E5%87%BA%E3%81%A6%E3%81%93%E3%81%84%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%91%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/1e/Casper_the_Friendly_Ghost_issue_No.1_%28March%2C_1991%29.jpg"
 },{
   "_id": {
     "$oid": "60d011ae9a1c0148047eba46"
@@ -2259,7 +2258,8 @@
     "en": "https://en.wikipedia.org/wiki/Calamity_Jane",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%A9%E3%83%9F%E3%83%86%E3%82%A3%E3%83%BB%E3%82%B8%E3%82%A7%E3%83%BC%E3%83%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Calamity_jane.jpeg"
 },{
   "_id": {
     "$oid": "60d011be9a1c0148047eba4a"
@@ -2282,30 +2282,8 @@
     "en": "https://en.wikipedia.org/wiki/Minotaur",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%BC%E3%83%8E%E3%83%BC%E3%82%BF%E3%82%A6%E3%83%AD%E3%82%B9"
   },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "60d011c89a1c0148047eba4e"
-  },
-  "inputLang": "fr",
-  "person": {
-    "_id": {
-      "$oid": "60d011c89a1c0148047eba4f"
-    },
-    "fr": "Cyrano de Bergerac (Rostand)",
-    "en": "Cyrano de Bergerac (play)",
-    "ja": "シラノ・ド・ベルジュラック (戯曲)"
-  },
-  "difficulty": "hard",
-  "wikipedia": {
-    "_id": {
-      "$oid": "60d011c89a1c0148047eba50"
-    },
-    "fr": "https://fr.wikipedia.org/wiki/Cyrano_de_Bergerac_(Rostand)",
-    "en": "https://en.wikipedia.org/wiki/Cyrano_de_Bergerac_(play)",
-    "ja": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A9%E3%83%8E%E3%83%BB%E3%83%89%E3%83%BB%E3%83%99%E3%83%AB%E3%82%B8%E3%83%A5%E3%83%A9%E3%83%83%E3%82%AF_(%E6%88%AF%E6%9B%B2)"
-  },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Minotauros_Myron_NAMA_1664_n1.jpg"
 },{
   "_id": {
     "$oid": "60d011e09a1c0148047eba52"
@@ -2328,7 +2306,8 @@
     "en": "https://en.wikipedia.org/wiki/Frida_Kahlo",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BB%E3%82%AB%E3%83%BC%E3%83%AD"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/06/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg"
 },{
   "_id": {
     "$oid": "60d011ea9a1c0148047eba56"
@@ -2351,7 +2330,8 @@
     "en": "https://en.wikipedia.org/wiki/Dom_Juan",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%B3%E3%83%BB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%B3_(%E6%88%AF%E6%9B%B2)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/61/Frontispiece_to_Moli%C3%A8re%27s_Dom_Juan_by_P_Brissart_1682_-_c%C3%A9sar.jpg"
 },{
   "_id": {
     "$oid": "60d012379a1c0148047eba5a"
@@ -2374,7 +2354,8 @@
     "en": "https://en.wikipedia.org/wiki/Georges_Brassens",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%AB%E3%82%B8%E3%83%A5%E3%83%BB%E3%83%96%E3%83%A9%E3%83%83%E3%82%B5%E3%83%B3%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Georges_Brassens_%C3%A0_Toulouse_en_d%C3%A9cembre_1963_%28cropped%29.jpg"
 },{
   "_id": {
     "$oid": "60d012409a1c0148047eba5e"
@@ -2397,7 +2378,8 @@
     "en": "https://en.wikipedia.org/wiki/Buffalo_Bill",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%83%E3%83%95%E3%82%A1%E3%83%AD%E3%83%BC%E3%83%BB%E3%83%93%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Cody-Buffalo-Bill-LOC.jpg"
 },{
   "_id": {
     "$oid": "60d0124c9a1c0148047eba62"
@@ -2420,7 +2402,8 @@
     "en": "https://en.wikipedia.org/wiki/Coluche",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A5"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/cb/Coluche_1.jpg"
 },{
   "_id": {
     "$oid": "60d012759a1c0148047eba66"
@@ -2443,7 +2426,8 @@
     "en": "https://en.wikipedia.org/wiki/Vercingetorix",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%AB%E3%82%AD%E3%83%B3%E3%82%B2%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Vercing%C3%A9torix_stat%C3%A8re_Gallica_avers.jpg"
 },{
   "_id": {
     "$oid": "60d0127f9a1c0148047eba6a"
@@ -2466,7 +2450,8 @@
     "en": "https://en.wikipedia.org/wiki/Jacques_Cousteau",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%83%E3%82%AF%EF%BC%9D%E3%82%A4%E3%83%B4%E3%83%BB%E3%82%AF%E3%82%B9%E3%83%88%E3%83%BC"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/10/Cousteau1972_%28cropped%29.jpg"
 },{
   "_id": {
     "$oid": "60d012899a1c0148047eba6e"
@@ -2489,7 +2474,8 @@
     "en": "https://en.wikipedia.org/wiki/Geronimo",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%82%A7%E3%83%AD%E3%83%8B%E3%83%A2"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Geronimo_agn_1913.jpg"
 },{
   "_id": {
     "$oid": "60d012b39a1c0148047eba72"
@@ -2512,7 +2498,8 @@
     "en": "https://en.wikipedia.org/wiki/The_Little_Match_Girl",
     "ja": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%83%E3%83%81%E5%A3%B2%E3%82%8A%E3%81%AE%E5%B0%91%E5%A5%B3"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Bertall_ill_La_Petite_Fille_et_les_allumettes.png"
 },{
   "_id": {
     "$oid": "60d012bd9a1c0148047eba76"
@@ -2535,7 +2522,8 @@
     "en": "https://en.wikipedia.org/wiki/Simone_Veil",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A2%E3%83%BC%E3%83%8C%E3%83%BB%E3%83%B4%E3%82%A7%E3%82%A4%E3%83%A6_(%E6%94%BF%E6%B2%BB%E5%AE%B6)"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Simone_Veil_%281984%29.jpg"
 },{
   "_id": {
     "$oid": "60d012c89a1c0148047eba7a"
@@ -2558,7 +2546,8 @@
     "en": "https://en.wikipedia.org/wiki/Alfred_Hitchcock",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%95%E3%83%AC%E3%83%83%E3%83%89%E3%83%BB%E3%83%92%E3%83%83%E3%83%81%E3%82%B3%E3%83%83%E3%82%AF"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Hitchcock%2C_Alfred_02.jpg"
 },{
   "_id": {
     "$oid": "60d012d39a1c0148047eba7e"
@@ -2581,7 +2570,8 @@
     "en": "https://en.wikipedia.org/wiki/Jack_the_Ripper",
     "ja": "https://ja.wikipedia.org/wiki/%E5%88%87%E3%82%8A%E8%A3%82%E3%81%8D%E3%82%B8%E3%83%A3%E3%83%83%E3%82%AF"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Fortun%C3%A9_M%C3%A9aulle_-_Whitechapel_murder.jpg"
 },{
   "_id": {
     "$oid": "60d012ee9a1c0148047eba82"
@@ -2604,7 +2594,8 @@
     "en": "https://en.wikipedia.org/wiki/Abb%C3%A9_Pierre",
     "ja": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%99%E3%83%BB%E3%83%94%E3%82%A8%E3%83%BC%E3%83%AB"
   },
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/ABBE_PIERRE-1999Without.jpg"
 },{
   "_id": {
     "$oid": "60d09407574da32a68377d00"
@@ -2627,7 +2618,8 @@
   },
   "inputLang": "fr",
   "difficulty": "medium",
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Shigeru_Miyamoto_cropped_2_Shigeru_Miyamoto_201911.jpg"
 },{
   "_id": {
     "$oid": "60d099ec1814852f5cc86e76"
@@ -2650,7 +2642,8 @@
   },
   "inputLang": "fr",
   "difficulty": "medium",
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Batman_%28black_background%29.jpg"
 },{
   "_id": {
     "$oid": "60d09a4c1814852f5cc86e7a"
@@ -2673,7 +2666,8 @@
   },
   "inputLang": "fr",
   "difficulty": "medium",
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Link_et_Zelda_Cosplay.jpg"
 },{
   "_id": {
     "$oid": "60d0b7bf04e6a40e70432791"
@@ -2696,7 +2690,8 @@
   },
   "inputLang": "ja",
   "difficulty": "medium",
-  "__v": 0
+  "__v": 0,
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Yoshihide_Suga_20210101.jpg"
 },{
   "_id": {
     "$oid": "60d1b01c08ed0935a0e88b76"
@@ -2744,5 +2739,389 @@
   "inputLang": "fr",
   "difficulty": "medium",
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Thomas_Edison2.jpg/800px-Thomas_Edison2.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1d5bbb671bb27f82baa64"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1d5bbb671bb27f82baa65"
+    },
+    "en": "Captain America",
+    "fr": "Captain America",
+    "ja": "キャプテン・アメリカ"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1d5bbb671bb27f82baa66"
+    },
+    "en": "https://en.wikipedia.org/wiki/Captain_America",
+    "fr": "https://fr.wikipedia.org/wiki/Captain_America",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%A3%E3%83%97%E3%83%86%E3%83%B3%E3%83%BB%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB"
+  },
+  "inputLang": "en",
+  "difficulty": "medium",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/91/CaptainAmerica109.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1d5efb671bb27f82baa69"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1d5efb671bb27f82baa6a"
+    },
+    "en": "Count Dracula",
+    "fr": "Dracula (personnage)",
+    "ja": "ドラキュラ"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1d5efb671bb27f82baa6b"
+    },
+    "en": "https://en.wikipedia.org/wiki/Count_Dracula",
+    "fr": "https://fr.wikipedia.org/wiki/Dracula_(personnage)",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%AD%E3%83%A5%E3%83%A9"
+  },
+  "inputLang": "en",
+  "difficulty": "easy",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Bela_Lugosi_as_Dracula%2C_anonymous_photograph_from_1931%2C_Universal_Studios.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1d628b671bb27f82baa6e"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1d628b671bb27f82baa6f"
+    },
+    "en": "Cyrano de Bergerac",
+    "fr": "Savinien de Cyrano de Bergerac",
+    "ja": "シラノ・ド・ベルジュラック"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1d628b671bb27f82baa70"
+    },
+    "en": "https://en.wikipedia.org/wiki/Cyrano_de_Bergerac",
+    "fr": "https://fr.wikipedia.org/wiki/Savinien_de_Cyrano_de_Bergerac",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A9%E3%83%8E%E3%83%BB%E3%83%89%E3%83%BB%E3%83%99%E3%83%AB%E3%82%B8%E3%83%A5%E3%83%A9%E3%83%83%E3%82%AF"
+  },
+  "inputLang": "en",
+  "difficulty": "hard",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Savinien_de_Cyrano_de_Bergerac.JPG",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1e315b671bb27f82baa73"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1e315b671bb27f82baa74"
+    },
+    "en": "Evil Queen (Disney)",
+    "fr": "Reine-sorcière",
+    "ja": "女王/魔女"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1e315b671bb27f82baa75"
+    },
+    "en": "https://en.wikipedia.org/wiki/Evil_Queen_(Disney)",
+    "fr": "https://fr.wikipedia.org/wiki/Reine-sorci%C3%A8re",
+    "ja": "https://ja.wikipedia.org/wiki/%E5%A5%B3%E7%8E%8B/%E9%AD%94%E5%A5%B3"
+  },
+  "inputLang": "en",
+  "difficulty": "easy",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/19/QueenSnowWhite.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1e6a217db0527e4d8f999"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1e6a217db0527e4d8f99a"
+    },
+    "en": "Jack Skellington",
+    "fr": "Jack Skellington",
+    "ja": "ジャック・スケリントン"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1e6a217db0527e4d8f99b"
+    },
+    "en": "https://en.wikipedia.org/wiki/Jack_Skellington",
+    "fr": "https://fr.wikipedia.org/wiki/Jack_Skellington",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%82%A4%E3%83%88%E3%83%A1%E3%82%A2%E3%83%BC%E3%83%BB%E3%83%93%E3%83%95%E3%82%A9%E3%82%A2%E3%83%BB%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9"
+  },
+  "inputLang": "en",
+  "difficulty": "medium",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/ee/Jack_Skellington.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1e7825f2fb708a44653dd"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1e7825f2fb708a44653de"
+    },
+    "en": "Juliet",
+    "fr": "Juliette Capulet",
+    "ja": "ジュリエット"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1e7825f2fb708a44653df"
+    },
+    "en": "https://en.wikipedia.org/wiki/Juliet",
+    "fr": "https://fr.wikipedia.org/wiki/Juliette_Capulet",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%9F%E3%82%AA%E3%81%A8%E3%82%B8%E3%83%A5%E3%83%AA%E3%82%A8%E3%83%83%E3%83%88"
+  },
+  "inputLang": "en",
+  "difficulty": "medium",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/DickseeRomeoandJuliet.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1e98252148427a072d5f9"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1e98252148427a072d5fa"
+    },
+    "en": "Quasimodo",
+    "fr": "Quasimodo (personnage)",
+    "ja": "カジモド"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1e98252148427a072d5fb"
+    },
+    "en": "https://en.wikipedia.org/wiki/Quasimodo",
+    "fr": "https://fr.wikipedia.org/wiki/Quasimodo_(personnage)",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%83%88%E3%83%AB%E3%83%80%E3%83%A0%E3%81%AE%E9%90%98"
+  },
+  "inputLang": "en",
+  "difficulty": "easy",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Hunchback_of_Notre_Dame.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1e9b352148427a072d5fe"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1e9b352148427a072d5ff"
+    },
+    "en": "Gavroche",
+    "fr": "Gavroche",
+    "ja": "ガヴローシュ"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1e9b352148427a072d600"
+    },
+    "en": "https://en.wikipedia.org/wiki/Gavroche",
+    "fr": "https://fr.wikipedia.org/wiki/Gavroche",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%AC%E3%83%BB%E3%83%9F%E3%82%BC%E3%83%A9%E3%83%96%E3%83%AB"
+  },
+  "inputLang": "fr",
+  "difficulty": "medium",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Victor_hugo_gavroche_a_11_ans.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1eb8a51225328105bfe55"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1eb8a51225328105bfe56"
+    },
+    "en": "Big Bad Wolf",
+    "fr": "Loup (personnage de conte)",
+    "ja": "赤ずきんの狼"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1eb8a51225328105bfe57"
+    },
+    "en": "https://en.wikipedia.org/wiki/Big_Bad_Wolf",
+    "fr": "https://fr.wikipedia.org/wiki/Loup_(personnage_de_conte)",
+    "ja": "https://ja.wikipedia.org/wiki/%E8%B5%A4%E3%81%9A%E3%81%8D%E3%82%93"
+  },
+  "inputLang": "en",
+  "difficulty": "easy",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Little_Red_Riding_Hood_-_J._W._Smith.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1ebba51225328105bfe5a"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1ebba51225328105bfe5b"
+    },
+    "en": "Cleopatra",
+    "fr": "Cléopâtre VII",
+    "ja": "クレオパトラ7世"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1ebba51225328105bfe5c"
+    },
+    "en": "https://en.wikipedia.org/wiki/Cleopatra",
+    "fr": "https://fr.wikipedia.org/wiki/Cl%C3%A9op%C3%A2tre_VII",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AC%E3%82%AA%E3%83%91%E3%83%88%E3%83%A97%E4%B8%96"
+  },
+  "inputLang": "en",
+  "difficulty": "easy",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Kleopatra-VII.-Altes-Museum-Berlin1.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1ec1e51225328105bfe5f"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1ec1e51225328105bfe60"
+    },
+    "en": "Ned Stark",
+    "fr": "Eddard Stark",
+    "ja": "エダード・”ネッド”・スターク"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1ec1e51225328105bfe61"
+    },
+    "en": "https://en.wikipedia.org/wiki/Ned_Stark",
+    "fr": "https://fr.wikipedia.org/wiki/Eddard_Stark",
+    "ja": "https://ja.wikipedia.org/wiki/%E6%B0%B7%E3%81%A8%E7%82%8E%E3%81%AE%E6%AD%8C%E3%81%AE%E8%AB%B8%E5%90%8D%E5%AE%B6#%E3%82%A8%E3%83%80%E3%83%BC%E3%83%89%E3%83%BB%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AF"
+  },
+  "inputLang": "en",
+  "difficulty": "medium",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/52/Ned_Stark-Sean_Bean.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1ed0251225328105bfe67"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1ed0251225328105bfe68"
+    },
+    "en": "Esmeralda (The Hunchback of Notre-Dame)",
+    "fr": "La Esmeralda (personnage)",
+    "ja": "エスメラルダ"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1ed0251225328105bfe69"
+    },
+    "en": "https://en.wikipedia.org/wiki/Esmeralda_(The_Hunchback_of_Notre-Dame)",
+    "fr": "https://fr.wikipedia.org/wiki/La_Esmeralda_(personnage)",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%83%88%E3%83%AB%E3%83%80%E3%83%A0%E3%81%AE%E9%90%98#1"
+  },
+  "inputLang": "en",
+  "difficulty": "medium",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/La_Esmeralda_from_Victor_Hugo_and_His_Time.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1eda151225328105bfe6c"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1eda151225328105bfe6d"
+    },
+    "en": "The Bride (Kill Bill)",
+    "fr": "Beatrix Kiddo",
+    "ja": "ザ・ブライド"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1eda151225328105bfe6e"
+    },
+    "en": "https://en.wikipedia.org/wiki/The_Bride_(Kill_Bill)",
+    "fr": "https://fr.wikipedia.org/wiki/Beatrix_Kiddo",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%AB%E3%83%BB%E3%83%93%E3%83%AB"
+  },
+  "inputLang": "en",
+  "difficulty": "hard",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/7d/The_bride_%28kill_bill%29.JPG",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1edee51225328105bfe71"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1edee51225328105bfe72"
+    },
+    "en": "Babar the Elephant",
+    "fr": "Babar",
+    "ja": "ババール"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1edee51225328105bfe73"
+    },
+    "en": "https://en.wikipedia.org/wiki/Babar_the_Elephant",
+    "fr": "https://fr.wikipedia.org/wiki/Babar",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%90%E3%83%BC%E3%83%AB"
+  },
+  "inputLang": "en",
+  "difficulty": "easy",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0f/Babar1.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1ee5c51225328105bfe76"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1ee5c51225328105bfe77"
+    },
+    "en": "Bambi (character)",
+    "fr": "Bambi (personnage)",
+    "ja": "バンビ"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1ee5c51225328105bfe78"
+    },
+    "en": "https://en.wikipedia.org/wiki/Bambi_(character)",
+    "fr": "https://fr.wikipedia.org/wiki/Bambi_(personnage)",
+    "ja": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%B3%E3%83%93_(%E6%98%A0%E7%94%BB)#%E7%99%BB%E5%A0%B4%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC"
+  },
+  "inputLang": "en",
+  "difficulty": "easy",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Bambi-Hans-Bertle.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d1eeb951225328105bfe7b"
+  },
+  "person": {
+    "_id": {
+      "$oid": "60d1eeb951225328105bfe7c"
+    },
+    "en": "The Unknown Soldier",
+    "fr": "Soldat inconnu",
+    "ja": "無名戦士"
+  },
+  "wikipedia": {
+    "_id": {
+      "$oid": "60d1eeb951225328105bfe7d"
+    },
+    "en": "https://en.wikipedia.org/wiki/Tomb_of_the_Unknown_Soldier",
+    "fr": "https://fr.wikipedia.org/wiki/Tombe_du_Soldat_inconnu",
+    "ja": "https://ja.wikipedia.org/wiki/%E7%84%A1%E5%90%8D%E6%88%A6%E5%A3%AB%E3%81%AE%E5%A2%93"
+  },
+  "inputLang": "en",
+  "difficulty": "hard",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Altare_della_Patria-July_2016_%2859%29.jpg",
   "__v": 0
 }]
