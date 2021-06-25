@@ -21,6 +21,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table'; 
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card'; 
+import { MatIconModule } from '@angular/material/icon'; 
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { MatCardModule } from '@angular/material/card';
     MatSnackBarModule,
     MatTableModule,
     MatDividerModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

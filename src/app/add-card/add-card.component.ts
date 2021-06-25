@@ -94,4 +94,11 @@ export class AddCardComponent implements OnInit {
     )
   }
 
+  checkLink(event: Event) : void {
+    // TODO(horo): ugly replace
+    if ((event.target as Element).parentElement?.className.includes("disabled")) {
+      event.preventDefault();
+    }
+  }
+
 }

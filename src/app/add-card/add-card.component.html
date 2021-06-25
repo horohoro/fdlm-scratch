@@ -19,26 +19,40 @@
     <mat-divider></mat-divider>
 
     <div formGroupName="wikipedia" fxLayout="column" fxLayoutAlign="space-evenly center">
-        <mat-form-field appearance="fill">
-            <mat-label>Wikipedia (English)</mat-label>
-            <input matInput formControlName="en">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Wikipedia (French)</mat-label>
-            <input matInput formControlName="fr">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Wikipedia (Japanese)</mat-label>
-            <input matInput formControlName="ja">
-        </mat-form-field>
+        <div fxLayout="rows" fxLayoutAlign="space-evenly center" class="wikipedia-field">
+            <mat-form-field appearance="fill">
+                <mat-label>Wikipedia (English)</mat-label>
+                <input matInput formControlName="en">
+            </mat-form-field>
+            <a [href]="addCardForm.get('wikipedia.en')?.value" [class.disabled]="!addCardForm.get('wikipedia.en')?.value ? true: null" target="_blank" (click)="checkLink($event)"><mat-icon aria-hidden="false" aria-label="Link icon">link</mat-icon></a>
+        </div>
+        <div fxLayout="rows" fxLayoutAlign="space-evenly center" class="wikipedia-field">
+            <mat-form-field appearance="fill">
+                <mat-label>Wikipedia (French)</mat-label>
+                <input matInput formControlName="fr">
+            </mat-form-field>
+            <a [href]="addCardForm.get('wikipedia.fr')?.value" [class.disabled]="!addCardForm.get('wikipedia.fr')?.value ? true: null" target="_blank" (click)="checkLink($event)"><mat-icon aria-hidden="false" aria-label="Link icon">link</mat-icon></a>
+        </div>
+        <div fxLayout="rows" fxLayoutAlign="space-evenly center" class="wikipedia-field">
+            <mat-form-field appearance="fill">
+                <mat-label>Wikipedia (Japanese)</mat-label>
+                <input matInput formControlName="ja">
+            </mat-form-field>
+            <a [href]="addCardForm.get('wikipedia.ja')?.value" [class.disabled]="!addCardForm.get('wikipedia.fr')?.value ? true: null" target="_blank" (click)="checkLink($event)"><mat-icon aria-hidden="false" aria-label="Link icon">link</mat-icon></a>
+        </div>
     </div>
 
     <mat-divider></mat-divider>
     
-    <mat-form-field appearance="fill">
-        <mat-label>Image Url</mat-label>
-        <input matInput formControlName="imageUrl">
-    </mat-form-field>
+    <div class="image-input" fxLayout="rows" fxLayoutAlign="space-evenly center">
+        <mat-form-field appearance="fill">
+            <mat-label>Image Url</mat-label>
+            <input matInput formControlName="imageUrl">
+        </mat-form-field>
+        <div class="image-container">
+            <img fxLayoutAlign="center" [src]="addCardForm.get('imageUrl')?.value" [alt]="">
+        </div>
+    </div>
 
     <mat-divider></mat-divider>
 
