@@ -77,6 +77,8 @@
         </mat-select>
     </mat-form-field>
 
-    <a mat-raised-button color="primary" (click)="loadAndSubmit()">Load and submit</a>
-    <a mat-raised-button color="accent" (click)="load()">Load only</a>
+    <div fxLayout="rows" fxLayoutAlign="space-evenly center" fxLayoutGap="5px">
+        <a mat-raised-button color="primary" (click)="loadAndSubmit()">Load and submit</a>
+        <a mat-raised-button color="accent" (click)="load()">Load only</a>
+    </div>
 </form>
