@@ -1,10 +1,14 @@
 
-<div fxLayout="column" fxLayoutAlign="top center" fxFlexFill>
+<div fxLayout="column" fxLayoutAlign="top center">
     <mat-card fxLayout="column" fxLayoutAlign="space-evenly center">
         <mat-card-header>
             <mat-card-title>Your card !</mat-card-title>
         </mat-card-header>
-        <img fxLayoutAlign="center" mat-card-image [src]="card.imageUrl" [alt]="card.person?.en">
+
+        <div fxLayoutAlign="center"  class="image-container">
+            <img mat-card-image [src]="card.imageUrl" [alt]="card.person?.en">
+        </div>
+
         <mat-card-content>
             <mat-list fxLayout="column" fxLayoutAlign="space-evenly center">
                 <mat-list-item>
