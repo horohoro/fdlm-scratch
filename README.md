@@ -33,3 +33,4 @@ In 2 terminals:
 - Change from promise/then to asyn/await
 - Migrate backend to Typescript
 - Unit tests
+- Geo fencing
