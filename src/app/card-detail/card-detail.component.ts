@@ -26,16 +26,14 @@ export class CardDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.backendService.UnassignPlayer(this.player).subscribe(res =>
-        this.backendService.AssignUnassignedCard(this.player).subscribe(res =>
-          this.card = res));
+    this.backendService.ReturnCardOrAssignUnassignedCard(this.player).subscribe(res =>
+      this.card = res);
   }
 
-  reloadComponent() {
-    let currentUrl = this.router.url.split('?')[0];
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.router.onSameUrlNavigation = 'reload';
-    this.router.navigate([currentUrl], { queryParamsHandling: "preserve" });
+  pickAnotherCard() {
+    this.backendService.UnassignPlayer(this.player).subscribe(res =>
+      this.backendService.ReturnCardOrAssignUnassignedCard(this.player).subscribe(res =>
+        this.card = res));
   }
 
 }

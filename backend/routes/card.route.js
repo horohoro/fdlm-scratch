@@ -14,6 +14,8 @@ const WIKI_API = {
 }
 const ALL_LANGUAGUES = ['en', 'fr', 'ja']
 
+const FREE_CARD_TRANSACTION = { $unset: { player : '' , selected: ''} }
+
 // REST
 // Add Card
 cardRoute.route('/card').post((req, res, next) => {
@@ -122,49 +124,55 @@ cardRoute.route('/card').post((req, res, next) => {
 })*/
 
 // SOAP
-// Pick and assign an unassigned card
-cardRoute.route('/AssignUnassignedCard').get((req, res, next) => {
+// Return already assigned card or pick and assign an unassigned card
+cardRoute.route('/ReturnCardOrAssignUnassignedCard').get(async (req, res, next) => {
   console.log(req.originalUrl)
 
-  if (!req.query.player) {
-    return handleErrorAndReturnNext(500, 'Player id must be specified', res)
-  }
-  let player = req.query.player
-
-  // Possible race condition between sampling and reserving the card
-  // May be solved by using transactions https://mongoosejs.com/docs/transactions.html
-  Card.aggregate(
-    [{ $match: { player: { $exists: false } } },
-    { $sample: { size: 1 } },
-    { $set: { player: player, selected: true } }]
-  ).exec(
-    (error, data) => {
-      if (error) {
-        console.log(error)
-        return next(error)
-      } else {
-        if (!data || !data.length) {
-          return handleErrorAndReturnNext(500, 'No free entry was found', res)
-        }
-        Card.findByIdAndUpdate(
-          data[0]._id,
-          { player: player, selected: true },
-          { new: true, strict: true },
-          (error, data) => {
-            if (error) {
-              console.log(error)
-              return next(error)
-            } else {
-              if (!data) {
-                return handleErrorAndReturnNext(500, 'The found free entry can no longer be found', res)
-              }
-              res.json(data)
-              console.log(`${data.person} has been assigned to player ${player}`)
-            }
-          })
-      }
+  try {
+    if (!req.query.player) {
+      return handleErrorAndReturnNext(500, 'Player id must be specified', res)
     }
-  )
+    let player = req.query.player
+
+    let pickedCard = await Card.findOne({player: player}).exec()
+
+    if (pickedCard) {
+      await Card.updateMany(
+        { player: player, _id: { $ne: pickedCard._id }},
+        FREE_CARD_TRANSACTION).exec()
+
+      res.json(pickedCard)
+      return
+    }
+
+    // Possible race condition between sampling and reserving the card
+    // May be solved by using transactions https://mongoosejs.com/docs/transactions.html
+    let pickedResult = await Card.aggregate(
+      [{ $match: { player: { $exists: false } } },
+      { $sample: { size: 1 } }]
+    ).exec()
+
+    if (!pickedResult || !pickedResult.length) {
+      return handleErrorAndReturnNext(500, 'No free entry was found', res)
+    }
+
+    pickedCard = pickedResult[0]
+
+    let updatedCard = await Card.findByIdAndUpdate(
+      pickedCard._id,
+      { player: player, selected: true },
+      { new: true, strict: true }).exec()
+
+    if (!updatedCard) {
+      handleErrorAndReturnNext(500, 'The found free entry can no longer be found', res)
+      return
+    }
+    res.json(updatedCard)
+    console.log(`${updatedCard.person} has been assigned to player ${player}`)
+
+  } catch (err) {
+    handleErrorAndReturnNext(500, err.message, res)
+  }
 })
 
 // Unassign player(s)
@@ -178,7 +186,7 @@ cardRoute.route('/UnassignPlayer').get((req, res, next) => {
 
   Card.updateMany(
     filter,
-    { $unset: { player : '' , selected: ''} },
+    FREE_CARD_TRANSACTION,
     (error, data) => {
       if (error) {
         console.log(error)
@@ -256,7 +264,7 @@ cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
 
   Card.updateMany(
     { player: { $exists: false }, selected: true },
-    { $unset: ['player', 'selected'] },
+    FREE_CARD_TRANSACTION,
     (error, data) => {
       if (error) {
         console.log(error)
@@ -265,28 +273,7 @@ cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
       if (data.n != data.nModified) {
         return handleErrorAndReturnNext(500, 'Some matched card were not modified properly', res)
       }
-      console.log('All unassigned card have been unselected')
-      res.json(data.nModified)
-    }
-  )
-})
-
-// Load new game
-cardRoute.route('/UnselectUnassignedCards').get((req, res, next) => {
-  console.log(req.originalUrl)
-
-  Card.updateMany(
-    { player: { $exists: false }, selected: true },
-    { $unset: ['player', 'selected'] },
-    (error, data) => {
-      if (error) {
-        console.log(error)
-        return next(error)
-      }
-      if (data.n != data.nModified) {
-        return handleErrorAndReturnNext(500, 'Some matched card were not modified properly', res)
-      }
-      console.log('All unassigned card have been unselected')
+      console.log(`All (${data.nModified}) unassigned card have been unselected`)
       res.json(data.nModified)
     }
   )

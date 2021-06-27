@@ -80,8 +80,8 @@ export class BackendService {
 
   // SOAP
   // Pick and assign an unassigned card
-  AssignUnassignedCard(player : number): Observable<Card> {
-    let API_URL = `${this.endpoint}/AssignUnassignedCard`;
+  ReturnCardOrAssignUnassignedCard(player : number): Observable<Card> {
+    let API_URL = `${this.endpoint}/ReturnCardOrAssignUnassignedCard`;
     return this.http.get<Card>(API_URL, { headers: this.headers, params: { player: player } })
       .pipe(
         map((res: Card) => {

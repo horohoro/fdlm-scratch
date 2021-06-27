@@ -38,15 +38,17 @@ app.listen(port, () => {
 
 // Find 404 and hand over to error handler
 app.use((req, res, next) => {
+  console.log(req.originalUrl)
+
   console.log(`${req.headers['x-forwarded-for'] || req.socket.remoteAddress }`)
-  next(createError(404));
+  res.status(404).send('This is not the droid you are looking for.');
 });
 
 // Index Route
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   console.log(`${req.headers['x-forwarded-for'] || req.socket.remoteAddress }`)
   res.send('invaild endpoint');
-});
+});*/
 
 // error handler
 app.use(function (err, req, res, next) {
