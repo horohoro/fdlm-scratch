@@ -168,7 +168,7 @@ cardRoute.route('/ReturnCardOrAssignUnassignedCard').get(async (req, res, next) 
       return
     }
     res.json(updatedCard)
-    console.log(`${updatedCard.person} has been assigned to player ${player}`)
+    console.log(`${updatedCard.person.en} has been assigned to player ${player}`)
 
   } catch (err) {
     handleErrorAndReturnNext(500, err.message, res)
