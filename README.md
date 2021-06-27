@@ -30,3 +30,6 @@ In 2 terminals:
 - Additional "gamemodes" (such as increase the number of noise cards)
 - Add more language support (and revamp language support)
 - Preframe the image to avoid jumping UI
+- Change from promise/then to asyn/await
+- Migrate backend to Typescript
+- Unit tests
