@@ -32,22 +32,23 @@ export class ResultComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.backendService.UnassignPlayer(this.player).subscribe()
+
   }
 
   newGame(): void {
-    this.backendService.UnselectUnassignedCards().subscribe(
-      res => this.router.navigate(['/card-detail'], { queryParamsHandling: "preserve" }))
+    this.backendService.UnassignPlayer(this.player).subscribe(
+      () => this.backendService.UnselectUnassignedCards().subscribe(
+        () => this.router.navigate(['/card-detail'], { queryParamsHandling: "preserve" })))
   }
 
   leaveGame(): void {
     // The destroy will be called and unassign the player
-    this.router.navigate(['/'])
+    this.backendService.UnassignPlayer(this.player).subscribe(() => this.router.navigate(['/']))
   }
 
   resetAllCards(): void {
     this.backendService.UnassignPlayer().subscribe(
-      res => console.log('all cards have been successfully reset'))
+      res => console.log('All cards have been successfully reset'))
   }
 
 }

@@ -1,8 +1,8 @@
 <p>
   <mat-toolbar color="primary">
-    <a mat-button [routerLink]="['/']" [queryParamsHandling]="'preserve'">Fiesta De Los Muertos</a>
+    <a mat-button (click)="goToHome()">Fiesta De Los Muertos</a>
     <span class="example-spacer"></span>
-    <a mat-button color="accent" [routerLink]="['/add-card']">Add a new card</a>
+    <a mat-button color="accent" (click)="goToAddCards()">Add a new card</a>
   </mat-toolbar>
 </p>
 
