@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BackendService } from '../backend.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Card } from '../card';
+import { FilterSettings } from '../filter-settings';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class ResultComponent implements OnInit, OnDestroy {
   cards?: Card[];
   private player?: number;
   displayedColumns: string[] = ['en', 'fr', 'ja'];
+  filterSettings = new FilterSettings();
 
   constructor(
     private backendService : BackendService,
@@ -23,11 +25,14 @@ export class ResultComponent implements OnInit, OnDestroy {
     private router : Router) {
       this.activatedRoute.queryParams.subscribe(params => {
         this.player = params['player'];
+        if (params['selectedDifficulty']) {
+          this.filterSettings = new FilterSettings(params['selectedDifficulty'])
+        }
       })
     }
 
   ngOnInit(): void {
-    this.backendService.GameResult().subscribe(
+    this.backendService.GameResult(this.filterSettings.selectedDifficultyToString()).subscribe(
       res => this.cards = res);
   }
 

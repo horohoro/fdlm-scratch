@@ -145,10 +145,16 @@ cardRoute.route('/ReturnCardOrAssignUnassignedCard').get(async (req, res, next) 
       return
     }
 
+    let cardFilter = { player: { $exists: false } }
+
+    if (req.query.selectedDifficulty) {
+      cardFilter.difficulty = { $in: req.query.selectedDifficulty.split(',') }
+    }
+
     // Possible race condition between sampling and reserving the card
     // May be solved by using transactions https://mongoosejs.com/docs/transactions.html
     let pickedResult = await Card.aggregate(
-      [{ $match: { player: { $exists: false } } },
+      [{ $match: cardFilter },
       { $sample: { size: 1 } }]
     ).exec()
 
@@ -199,63 +205,50 @@ cardRoute.route('/UnassignPlayer').get((req, res, next) => {
 })
 
 // Return result
-cardRoute.route('/GameResult').get((req, res, next) => {
+cardRoute.route('/GameResult').get(async (req, res, next) => {
   console.log(req.originalUrl)
 
-  Card.find(
-    { selected: true },
-    (error, data) => {
-      if (error) {
-        console.log(error)
-        return next(error)
-      } 
-      if (!data || !data.length) {
-        return handleErrorAndReturnNext(500, 'No player found', res)
-      }
-      if (data.length < TOTAL_NUMER_OF_PERSONS) {
-          let already_selected = data
-          Card.aggregate(
-            [
-              { $match: { selected: { $ne: true } } },
-              { $sample: { size: TOTAL_NUMER_OF_PERSONS - already_selected.length }}
-            ],
-            (error, data) => {
-              if (error) {
-                return next(error)
-              }
-              if (
-                !data ||
-                !data.length ||
-                data.length < TOTAL_NUMER_OF_PERSONS - already_selected.length) {
-                return handleErrorAndReturnNext(500, 'Not enough free cards', res)
-              }
-              Card.updateMany(
-                { _id: { $in: data.map(datum => datum._id) } },
-                { $set: {selected: true} },
-                (error, data) => {
-                  if (error) {
-                    return next(error)
-                  }
-                  Card.find(
-                    { selected: true },
-                    (error, data) => {
-                      if (error) {
-                        console.log(error)
-                        return next(error)
-                      } 
-                      if (!data || !data.length || data.length < TOTAL_NUMER_OF_PERSONS) {
-                        return handleErrorAndReturnNext(500, 'Not enough card selected', res)
-                      }
-                      res.json(data)
-                    })
-                })
-            }
-          )
-      } else {
-        res.json(data)
-      }
+  let selectedCards = await Card.find({ selected: true }).exec()
+
+  if (!selectedCards || !selectedCards.length) {
+    return handleErrorAndReturnNext(500, 'No player found', res)
+  }
+
+  if (selectedCards.length < TOTAL_NUMER_OF_PERSONS) {
+
+    let cardFilter = { selected: { $ne: true } }
+
+    if (req.query.selectedDifficulty) {
+      cardFilter.difficulty = { $in: req.query.selectedDifficulty.split(',') }
     }
-  )
+
+    console.log(cardFilter);
+
+    let newCardsToSelect = await Card.aggregate(
+      [
+        { $match: cardFilter },
+        { $sample: { size: TOTAL_NUMER_OF_PERSONS - selectedCards.length }}
+      ]).exec()
+    
+    if (
+      !newCardsToSelect ||
+      !newCardsToSelect.length ||
+      newCardsToSelect.length < TOTAL_NUMER_OF_PERSONS - selectedCards.length) {
+      return handleErrorAndReturnNext(500, 'Not enough free cards', res)
+    }
+
+    await Card.updateMany(
+      { _id: { $in: newCardsToSelect.map(newCardToSelect => newCardToSelect._id) } },
+      { $set: {selected: true} }).exec()
+
+    selectedCards = await Card.find({ selected: true }).exec()
+
+    if (!selectedCards || !selectedCards.length || selectedCards.length < TOTAL_NUMER_OF_PERSONS) {
+      return handleErrorAndReturnNext(500, 'Not enough card selected', res)
+    }
+  }
+  
+  res.json(selectedCards)
 })
 
 // Unselect (reset) card that are not assigned to users already
@@ -412,11 +405,12 @@ function handleErrorAndReturnNext(code, message, res,) {
 }
 
 // Internal function
+// Turn wiki URL into title page
 function getTitleFromWikiURL(url) {
   return decodeURI(url.split('/').reverse()[0].split('?')[0])
 }
 
-// Internal function
+// Check if a duplicate of this card exists
 function checkIfExists(card) {
   let itemsToCheck = []
 

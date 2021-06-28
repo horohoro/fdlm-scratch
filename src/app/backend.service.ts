@@ -80,9 +80,15 @@ export class BackendService {
 
   // SOAP
   // Pick and assign an unassigned card
-  ReturnCardOrAssignUnassignedCard(player : number): Observable<Card> {
+  ReturnCardOrAssignUnassignedCard(player : number, selectedDifficulty?: string): Observable<Card> {
     let API_URL = `${this.endpoint}/ReturnCardOrAssignUnassignedCard`;
-    return this.http.get<Card>(API_URL, { headers: this.headers, params: { player: player } })
+
+    let params : {player:number, selectedDifficulty?: string} = { player: player }
+    if (selectedDifficulty) {
+      params.selectedDifficulty = selectedDifficulty;
+    }
+
+    return this.http.get<Card>(API_URL, { headers: this.headers, params: params })
       .pipe(
         map((res: Card) => {
           return res;
@@ -109,10 +115,15 @@ export class BackendService {
   }
 
   // Return result
-  GameResult(): Observable<Card[]> {
+  GameResult(selectedDifficulty?: string): Observable<Card[]> {
     let API_URL = `${this.endpoint}/GameResult`;
 
-    return this.http.get<Card[]>(API_URL, { headers: this.headers })
+    let params : {selectedDifficulty?: string} = {}
+    if (selectedDifficulty) {
+      params.selectedDifficulty = selectedDifficulty;
+    }
+
+    return this.http.get<Card[]>(API_URL, { headers: this.headers, params: params })
       .pipe(
         map((res: Card[]) => {
           return res;
@@ -164,5 +175,4 @@ export class BackendService {
       return throwError(errorMessage);
     }
   }
-
 }

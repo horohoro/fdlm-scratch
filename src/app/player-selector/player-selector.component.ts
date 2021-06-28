@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../backend.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FilterSettings } from '../filter-settings';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./player-selector.component.scss']
 })
 export class PlayerSelectorComponent implements OnInit {
+  filterSettings = new FilterSettings();
 
   constructor(
     private backendService : BackendService,
@@ -23,5 +25,4 @@ export class PlayerSelectorComponent implements OnInit {
         }
     })
   }
-
 }

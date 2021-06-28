@@ -1,10 +1,17 @@
-<p fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="space-evenly center">
-    <a mat-raised-button class="blue-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 1}">1</a><br/>
-    <a mat-raised-button class="red-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 2}">2</a><br/>
-    <a mat-raised-button class="purple-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 3}">3</a><br/>
-    <a mat-raised-button class="yellow-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 4}">4</a><br/>
-    <a mat-raised-button class="green-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 5}">5</a><br/>
-    <a mat-raised-button class="cyan-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 6}">6</a><br/>
-    <a mat-raised-button class="pink-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 7}">7</a><br/>
-    <a mat-raised-button class="orange-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 8}">8</a><br/>
-</p>
+<div fxLayout="rows" fxLayoutAlign="space-evenly center">
+    <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="space-evenly center">
+        <a mat-raised-button class="blue-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 1, selectedDifficulty: filterSettings.selectedDifficultyToString()}">1</a><br/>
+        <a mat-raised-button class="red-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 2, selectedDifficulty: filterSettings.selectedDifficultyToString()}">2</a><br/>
+        <a mat-raised-button class="purple-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 3, selectedDifficulty: filterSettings.selectedDifficultyToString()}">3</a><br/>
+        <a mat-raised-button class="yellow-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 4, selectedDifficulty: filterSettings.selectedDifficultyToString()}">4</a><br/>
+        <a mat-raised-button class="green-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 5, selectedDifficulty: filterSettings.selectedDifficultyToString()}">5</a><br/>
+        <a mat-raised-button class="cyan-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 6, selectedDifficulty: filterSettings.selectedDifficultyToString()}">6</a><br/>
+        <a mat-raised-button class="pink-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 7, selectedDifficulty: filterSettings.selectedDifficultyToString()}">7</a><br/>
+        <a mat-raised-button class="orange-btn" [routerLink]="['/card-detail']" [queryParams]="{player: 8, selectedDifficulty: filterSettings.selectedDifficultyToString()}">8</a><br/>
+    </div>
+    <div fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="center">
+        <mat-checkbox [checked]="filterSettings.selectedDifficulty.easy" color="primary" (change)="filterSettings.selectedDifficulty.easy = !filterSettings.selectedDifficulty.easy">Eazy</mat-checkbox>
+        <mat-checkbox [checked]="filterSettings.selectedDifficulty.medium" color="accent" (change)="filterSettings.selectedDifficulty.medium = !filterSettings.selectedDifficulty.medium">Medium</mat-checkbox>
+        <mat-checkbox [checked]="filterSettings.selectedDifficulty.hard" color="warn" (change)="filterSettings.selectedDifficulty.hard = !filterSettings.selectedDifficulty.hard">Hard</mat-checkbox>
+    </div>
+</div>

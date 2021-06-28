@@ -53,6 +53,7 @@ export class AddCardComponent implements OnInit {
     })
   }
 
+  // TODO(horo): Convert https://en.m.wikipedia.org/wiki/ URL input en https://en.wikipedia.org/wiki/
   loadAndSubmit(): void {
     const checkAndSubmit = () : boolean => {
       let card : Card = new Card();

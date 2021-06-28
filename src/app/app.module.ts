@@ -20,8 +20,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table'; 
 import { MatDividerModule } from '@angular/material/divider';
-import { MatCardModule } from '@angular/material/card'; 
-import { MatIconModule } from '@angular/material/icon'; 
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatDividerModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
