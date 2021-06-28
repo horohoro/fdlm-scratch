@@ -25,8 +25,12 @@ export class AppComponent {
     this.goToRoute('/')
   }
 
-  goToAddCards() {
+  goToAddCard() {
     this.goToRoute('/add-card')
+  }
+
+  goToListCards() {
+    this.goToRoute('/list-cards')
   }
 
   goToRoute(route : string){

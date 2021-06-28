@@ -2,7 +2,10 @@
   <mat-toolbar color="primary">
     <a mat-button (click)="goToHome()">Fiesta De Los Muertos</a>
     <span class="example-spacer"></span>
-    <a mat-button color="accent" (click)="goToAddCards()">Add a new card</a>
+    <span>
+      <a mat-button color="accent" (click)="goToListCards()"><mat-icon aria-hidden="false" aria-label="List cards">list_alt</mat-icon></a>
+      <a mat-button color="accent" (click)="goToAddCard()"><mat-icon aria-hidden="false" aria-label="Add card">add</mat-icon></a>
+    </span>
   </mat-toolbar>
 </p>
 

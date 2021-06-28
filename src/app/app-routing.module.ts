@@ -4,6 +4,7 @@ import { PlayerSelectorComponent } from './player-selector/player-selector.compo
 import { CardDetailComponent } from './card-detail/card-detail.component';
 import { ResultComponent } from './result/result.component';
 import { AddCardComponent } from './add-card/add-card.component';
+import { ListCardsComponent } from './list-cards/list-cards.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'card-detail', component: CardDetailComponent},
   { path: 'result', component: ResultComponent},
   { path: 'add-card', component: AddCardComponent},
+  { path: 'list-cards', component: ListCardsComponent},
 ];
 
 @NgModule({

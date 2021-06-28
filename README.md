@@ -17,7 +17,6 @@ In 2 terminals:
 ## Roadmap
 - Detect and filter out shitty images
     - Fallback to other languages for images
-- List all the cards
 - Edit a card
 - Upvote/downvote cards
 - Remove player selection and use cookie/refresh token to assign 1 card per client
@@ -38,3 +37,5 @@ In 2 terminals:
     - Share some classes between FE and BE
 - Unit tests
 - Geo fencing
+- Disable cards instead of deleting them
+- Pagination for list

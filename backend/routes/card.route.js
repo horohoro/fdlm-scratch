@@ -46,7 +46,7 @@ cardRoute.route('/card').post((req, res, next) => {
 });
 
 // Get all card
-/*cardRoute.route('/cards').get((req, res, next) => {  
+cardRoute.route('/cards').get((req, res, next) => {  
   console.log(req.originalUrl)
 
   Card.find((error, data) => {
@@ -56,7 +56,7 @@ cardRoute.route('/card').post((req, res, next) => {
       res.json(data)
     }
   })
-})*/
+})
 
 // Get random Card
 /*cardRoute.route('/card').get((req, res, next) => {
@@ -108,20 +108,19 @@ cardRoute.route('/card').post((req, res, next) => {
 })*/
 
 // Delete card
-/*cardRoute.route('/card/:id').delete((req, res, next) => {
+cardRoute.route('/card/:id').delete(async (req, res, next) => {
   console.log(req.originalUrl)
 
-  Card.findByIdAndRemove(req.params.id, (error, data) => {
-    if (error) {
-      console.log(error)
-      return next(error);
-    } else {
-      res.status(200).json({
-        msg: data
-      })
-    }
-  })
-})*/
+  try {
+    let deletedCard = await Card.findByIdAndRemove(req.params.id).exec()
+
+    console.log(`${card.person.en} has been deleted`)
+
+    res.json(deletedCard)
+  } catch(err) {
+    handleErrorAndReturnNext(500, err.message, res)
+  }
+})
 
 // SOAP
 // Return already assigned card or pick and assign an unassigned card
