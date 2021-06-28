@@ -48,7 +48,9 @@ export class ResultComponent implements OnInit, OnDestroy {
 
   leaveGame(): void {
     // The destroy will be called and unassign the player
-    this.backendService.UnassignPlayer(this.player).subscribe(() => this.router.navigate(['/']))
+    this.backendService.UnassignPlayer(this.player).subscribe(
+      () => this.backendService.UnselectUnassignedCards().subscribe(
+        () => this.router.navigate(['/'])))
   }
 
   resetAllCards(): void {
