@@ -114,7 +114,7 @@ cardRoute.route('/card/:id').delete(async (req, res, next) => {
   try {
     let deletedCard = await Card.findByIdAndRemove(req.params.id).exec()
 
-    console.log(`${card.person.en} has been deleted`)
+    console.log(`${deletedCard.person.en} has been deleted`)
 
     res.json(deletedCard)
   } catch(err) {

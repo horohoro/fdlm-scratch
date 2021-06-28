@@ -74,6 +74,10 @@ export class BackendService {
     var API_URL = `${this.endpoint}/card/${id}`;
     return this.http.delete<Card>(API_URL)
       .pipe(
+        map((deletedCard : Card) => {
+          this.matSnackBar.open(`${deletedCard.person?.en} was deleted !`, 'Close', {duration: 2000});
+          return deletedCard
+        }),
         catchError(BackendService.errorMgmt(this.matSnackBar))
       )
   }
