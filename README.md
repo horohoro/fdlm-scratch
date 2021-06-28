@@ -39,3 +39,4 @@ In 2 terminals:
 - Geo fencing
 - Disable cards instead of deleting them
 - Pagination for list
+- Sort list
