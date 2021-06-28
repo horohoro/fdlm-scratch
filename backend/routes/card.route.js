@@ -175,7 +175,7 @@ cardRoute.route('/ReturnCardOrAssignUnassignedCard').get(async (req, res, next) 
     res.json(updatedCard)
     console.log(`${updatedCard.person.en} has been assigned to player ${player}`)
 
-  } catch (err) {
+  } catch(err) {
     handleErrorAndReturnNext(500, err.message, res)
   }
 })
@@ -207,45 +207,49 @@ cardRoute.route('/UnassignPlayer').get((req, res, next) => {
 cardRoute.route('/GameResult').get(async (req, res, next) => {
   console.log(req.originalUrl)
 
-  let selectedCards = await Card.find({ selected: true }).exec()
+  try {
+    let selectedCards = await Card.find({ selected: true }).exec()
 
-  if (!selectedCards || !selectedCards.length) {
-    return handleErrorAndReturnNext(500, 'No player found', res)
-  }
-
-  if (selectedCards.length < TOTAL_NUMER_OF_PERSONS) {
-
-    let cardFilter = { selected: { $ne: true } }
-
-    if (req.query.selectedDifficulty) {
-      cardFilter.difficulty = { $in: req.query.selectedDifficulty.split(',') }
+    if (!selectedCards || !selectedCards.length) {
+      return handleErrorAndReturnNext(500, 'No player found', res)
     }
 
-    let newCardsToSelect = await Card.aggregate(
-      [
-        { $match: cardFilter },
-        { $sample: { size: TOTAL_NUMER_OF_PERSONS - selectedCards.length }}
-      ]).exec()
+    if (selectedCards.length < TOTAL_NUMER_OF_PERSONS) {
+
+      let cardFilter = { selected: { $ne: true } }
+
+      if (req.query.selectedDifficulty) {
+        cardFilter.difficulty = { $in: req.query.selectedDifficulty.split(',') }
+      }
+
+      let newCardsToSelect = await Card.aggregate(
+        [
+          { $match: cardFilter },
+          { $sample: { size: TOTAL_NUMER_OF_PERSONS - selectedCards.length }}
+        ]).exec()
+      
+      if (
+        !newCardsToSelect ||
+        !newCardsToSelect.length ||
+        newCardsToSelect.length < TOTAL_NUMER_OF_PERSONS - selectedCards.length) {
+        return handleErrorAndReturnNext(500, 'Not enough free cards', res)
+      }
+
+      await Card.updateMany(
+        { _id: { $in: newCardsToSelect.map(newCardToSelect => newCardToSelect._id) } },
+        { $set: {selected: true} }).exec()
+
+      selectedCards = await Card.find({ selected: true }).exec()
+
+      if (!selectedCards || !selectedCards.length || selectedCards.length < TOTAL_NUMER_OF_PERSONS) {
+        return handleErrorAndReturnNext(500, 'Not enough card selected', res)
+      }
+    }
     
-    if (
-      !newCardsToSelect ||
-      !newCardsToSelect.length ||
-      newCardsToSelect.length < TOTAL_NUMER_OF_PERSONS - selectedCards.length) {
-      return handleErrorAndReturnNext(500, 'Not enough free cards', res)
-    }
-
-    await Card.updateMany(
-      { _id: { $in: newCardsToSelect.map(newCardToSelect => newCardToSelect._id) } },
-      { $set: {selected: true} }).exec()
-
-    selectedCards = await Card.find({ selected: true }).exec()
-
-    if (!selectedCards || !selectedCards.length || selectedCards.length < TOTAL_NUMER_OF_PERSONS) {
-      return handleErrorAndReturnNext(500, 'Not enough card selected', res)
-    }
+    res.json(selectedCards)
+  } catch(err) {
+    handleErrorAndReturnNext(500, err.message, res)
   }
-  
-  res.json(selectedCards)
 })
 
 // Unselect (reset) card that are not assigned to users already
