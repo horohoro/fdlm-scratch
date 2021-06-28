@@ -117,7 +117,7 @@ cardRoute.route('/card/:id').delete(async (req, res, next) => {
     console.log(`${deletedCard.person.en} has been deleted`)
 
     res.json(deletedCard)
-  } catch(err) {
+  } catch (err) {
     handleErrorAndReturnNext(500, err.message, res)
   }
 })
@@ -175,7 +175,7 @@ cardRoute.route('/ReturnCardOrAssignUnassignedCard').get(async (req, res, next) 
     res.json(updatedCard)
     console.log(`${updatedCard.person.en} has been assigned to player ${player}`)
 
-  } catch(err) {
+  } catch (err) {
     handleErrorAndReturnNext(500, err.message, res)
   }
 })
@@ -247,7 +247,7 @@ cardRoute.route('/GameResult').get(async (req, res, next) => {
     }
     
     res.json(selectedCards)
-  } catch(err) {
+  } catch (err) {
     handleErrorAndReturnNext(500, err.message, res)
   }
 })
