@@ -222,8 +222,6 @@ cardRoute.route('/GameResult').get(async (req, res, next) => {
       cardFilter.difficulty = { $in: req.query.selectedDifficulty.split(',') }
     }
 
-    console.log(cardFilter);
-
     let newCardsToSelect = await Card.aggregate(
       [
         { $match: cardFilter },

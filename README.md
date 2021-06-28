@@ -22,7 +22,9 @@ In 2 terminals:
 - Upvote/downvote cards
 - Remove player selection and use cookie/refresh token to assign 1 card per client
 - Add tags to cards
-- Options to narrow card selection or alter probability based on difficulty / tags / score
+- Options to narrow card selection or alter probability based on tags / score
+- Change card difficulty from card detail
+- Change difficulty filter from result or card-detail
 - Memorize previously assigned cards to reduce the probability of/prevent reassigning a recently assigned card
 - Use MongoDB transaction to avoid race conditions
 - Add score on card based if it was discovered or not
@@ -32,5 +34,7 @@ In 2 terminals:
 - Preframe the image to avoid jumping UI
 - Change from promise/then to asyn/await
 - Migrate backend to Typescript
+    - Make better classes for the backend (class for filtering)
+    - Share some classes between FE and BE
 - Unit tests
 - Geo fencing
